@@ -4,6 +4,7 @@ import travelBotdistance
 
 from random import randint, sample
 import logging
+import csv
 
 class TravelBot:
 	
@@ -29,6 +30,18 @@ class TravelBot:
 		dp.addTelegramMessageHandler(self.echo)
 		dp.addErrorHandler(self.error)
 
+		self.travelDestinations = list()
+
+		with open('destinations.csv', 'rb') as csvfile:
+			destinations = csv.reader(csvfile, delimiter=' ', quotechar='"')
+
+			next(destinations)
+
+	 		for row in destinations:
+	 			self.travelDestinations.append(row[0]+" , UK")
+		 
+		print self.travelDestinations
+
 
 	def is_security_cleared(self, user_id):
 		if user_id in self.users:
@@ -45,7 +58,7 @@ class TravelBot:
 			logging.debug("old chat")
 			self.chats[message.chat.id].add_msg(message)
 
-	    # Is it a new user
+		# Is it a new user
 		if (self.is_a_new_user(message.from_user.id)):
 			logging.debug("new user")
 			self.users[message.from_user.id] = DeboscioUser(message.from_user)			
@@ -83,7 +96,7 @@ class TravelBot:
 
 		#bot.sendChatAction(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING)
 		logging.debug("Looking for a place...")
-		places = self.googleDist.timeDist(str(user.latitude) + " " + str(user.longitude), ["Manchester, UK","Brighton,UK"])
+		places = self.googleDist.timeDist(str(user.latitude) + " " + str(user.longitude), self.travelDestinations)
 		print(places)
 		bot_answer = places['destination_addresses']
 
