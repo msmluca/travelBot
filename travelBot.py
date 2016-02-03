@@ -7,10 +7,7 @@ import logging
 
 class TravelBot:
 	
-	def __init__(self, auth_key):
-		#self.enable_msg_id = dict()
-		self.key = '198410'
-		
+	def __init__(self, auth_key):		
 		self.chats = dict()
 		self.users = dict()
 
@@ -27,8 +24,7 @@ class TravelBot:
 
 		# Register commands
 		dp.addTelegramCommandHandler("start", self.start)
-		dp.addTelegramCommandHandler("enable", self.enable)
-		dp.addTelegramCommandHandler("eat", self.eat)
+		dp.addTelegramCommandHandler("search", self.search)
 		dp.addTelegramCommandHandler("help", self.help)
 		dp.addTelegramMessageHandler(self.echo)
 		dp.addErrorHandler(self.error)
@@ -76,7 +72,7 @@ class TravelBot:
 		self.message_event(bot,update.message)
 		bot.sendMessage(update.message.chat_id, text='Nobody can helps you!')
 
-	def eat(self, bot, update):
+	def search(self, bot, update):
 		self.message_event(bot,update.message)
 
 		# do I've a location for this user?
@@ -104,19 +100,11 @@ class TravelBot:
 						i += 1
 			
 		
-		reply_markup = ReplyKeyboardMarkup([bot_answer])
-		bot.sendMessage(update.message.chat_id, text='Choose', reply_markup = reply_markup)
+		#reply_markup = ReplyKeyboardMarkup([bot_answer])
+		for answer in bot_answer:
+			bot.sendMessage(update.message.chat_id, text=answer)
 		
 		#self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)] = self.whereeat.select_place
-
-
-	def enable(self, bot, update):
-		self.message_event(bot,update.message)
-		bot.sendMessage(update.message.chat_id, text='Tell me the code!') #,reply_markup=reply_markup)		
-		# one command at time per chat
-		self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)] = self.authenticate
-		# self.enable_msg_id[val.chat_id] = val.message_id
-		#print("Sent reply: " + str(self.enable_msg_id[val.chat_id]))
 
 	def echo(self, bot, update):
 		if not (self.is_a_new_chat(update.message.chat.id)):
@@ -136,12 +124,6 @@ class TravelBot:
 
 			bot.sendMessage(update.message.chat_id, text='Got it!', reply_markup=ReplyKeyboardHide())				
 			del self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)]
-
-		# if update.message.reply_to_message is not None:		
-		# 	if (update.message.chat_id in self.enable_msg_id) & (update.message.reply_to_message.message_id == self.enable_msg_id[update.message.chat_id]):				
-		# 		# We got reply for enable command
-		# 		if self.authenticate(update.message):
-		# 			bot.sendMessage(update.message.chat_id, text='Got it!')
 
 		if self.is_security_cleared(update.message.from_user.id):
 			bot.sendMessage(update.message.chat_id, text='Keep talking')
