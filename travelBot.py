@@ -30,18 +30,19 @@ class TravelBot:
 		dp.addTelegramMessageHandler(self.echo)
 		dp.addErrorHandler(self.error)
 
-		self.travelDestinations = list()
+		self.travelDestinations = load_destinations('destinations.csv')
 
-		with open('destinations.csv', 'rb') as csvfile:
+
+	def load_destinations(self, file_name):
+		travelDestinations = list()
+
+		with open(file_name, 'rb') as csvfile:
 			destinations = csv.reader(csvfile, delimiter=' ', quotechar='"')
-
 			next(destinations)
-
-	 		for row in destinations:
-	 			self.travelDestinations.append(row[0]+" , UK")
+			for row in destinations:
+				travelDestinations.append(row[0]+" , UK")
 		 
-		print self.travelDestinations
-
+		 return travelDestinations
 
 	def is_security_cleared(self, user_id):
 		if user_id in self.users:
