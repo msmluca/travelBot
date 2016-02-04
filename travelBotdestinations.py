@@ -1,31 +1,18 @@
 import csv
+import pandas as pd
 
 class travelBotdestinations():
 
 	def load_destinations(self, file_destination):
 
 		travelDestinations = {}
-
-		# Create empty activities dictionary
-		# f = csv.reader(open(file_destination, 'r'), delimiter=',', quotechar='"')
-		# headers = f.next()
-		# activities = {activity:0 for activity in headers[1:]}
-
-		# Create dict of destination activities
-		# with open(file_destination, 'r') as csvfile:
-		# 	destinations = csv.reader(csvfile, delimiter=',', quotechar='"')
-		# 	next(destinations)
-		# 	for row in destinations:
-		# 		for i, x in enumerate(activities.keys()):
-		# 			activities[x] = row[i+1]
-		# 		travelDestinations[row[0] + ', UK'] = activities
 		 
 		# Create dict of destination activities
 		with open(file_destination, 'r') as csvfile:
 			destinations = csv.reader(csvfile, delimiter=',', quotechar='"')
 			next(destinations)
 			for row in destinations:
-				travelDestinations[row[0] + ', UK'] = {
+				travelDestinations[row[0]] = {
 					'Sights & Landmarks':row[1],
 					'Museums':row[2],
 					'Tours & Activities':row[3],
@@ -51,5 +38,5 @@ class travelBotdestinations():
 
 if __name__ == "__main__":
 	a = travelBotdestinations()
-	b = a.load_destinations("destinations.csv")
-	print(b['Derby, UK'])
+	b = a.load_destinations("./csv/destinations2.csv")
+	print(b['Derby'])
