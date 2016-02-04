@@ -22,26 +22,26 @@ class travelBotnltk():
 	def __init__(self):
 
 		# load last classifier
-		if os.path.isfile("naivebayes.pickle") :
-			classifier_f = open("naivebayes.pickle", "rb")
+		if os.path.isfile("./naivebayes.pickle") :
+			classifier_f = open("./naivebayes.pickle", "rb")
 			self.classifier = pickle.load(classifier_f)
 			classifier_f.close()
-		if os.path.isfile("all_words.pickle"): 
-			all_words_f = open("all_words.pickle", "rb")
+		if os.path.isfile("./nldata/all_words.pickle"): 
+			all_words_f = open("./nldata/all_words.pickle", "rb")
 			self.all_words = pickle.load(all_words_f)
 			all_words_f.close()
 
 	def train(self):
-		train_set = self.load_training_set("./travelBot_chat.csv")
+		train_set = self.load_training_set("./csv/travelBot_chat.csv")
 		self.t, self.all_words = self.create_train(train_set)
 		self.classifier = nltk.NaiveBayesClassifier.train(self.t)
 		self.classifier.show_most_informative_features(20)
 
 	def save(self):
-		save_classifier = open("naivebayes.pickle","wb")
+		save_classifier = open("./nldata/naivebayes.pickle","wb")
 		pickle.dump(self.classifier, save_classifier)
 		save_classifier.close()
-		save_all_words = open("all_words.pickle","wb")
+		save_all_words = open("./nldata/all_words.pickle","wb")
 		pickle.dump(self.all_words, save_all_words)
 		save_all_words.close()
 

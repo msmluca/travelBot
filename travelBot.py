@@ -3,6 +3,7 @@ from telegram import Updater, Bot, ReplyKeyboardMarkup, ForceReply, ReplyKeyboar
 import travelBotdistance
 import travelBotdestinations
 import travelBotnltk
+import travelBotjourney
 
 from random import randint, sample
 import logging
@@ -130,7 +131,7 @@ class TravelBot:
 			del self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)]
 
 
-	def error(bot, update, error):
+	def error(bot, update, error, error2):
 		loggin.warn('Update "%s" caused error "%s"' % (update, error))
 		raise ValueError('Parameter should...')
 
@@ -145,6 +146,7 @@ class TravelChat:
 		self.active = True;
 		self.message_count = 0;
 		self.users = []
+		self.journey = travelBotjourney.travelBotjourney()
 
 		self.add_msg(message)
 
@@ -177,20 +179,6 @@ class TravelChat:
 
 	def activate(self):
 		self.active = True
-
-
-class TravelUsers:
-	def add_user():
-		pass
-
-	def user_exists():
-		pass
-
-	def remove_user():
-		pass
-
-	def get_user():
-		pass
 
 
 class TravelUser:

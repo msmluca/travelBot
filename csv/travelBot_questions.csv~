@@ -1,0 +1,7 @@
+QuestionType,Question
+NUMBERDAYS,"How many days?"
+MAXTRAVELTIME,"How far would you like to go?"
+MAXBUDGET,"How much is your budget?"
+NROOMS,"How many rooms do you need?"
+ACTIVITIES,"What kind of holiday is it?"
+WHEN,"When you want to leave?"
