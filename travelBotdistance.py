@@ -13,11 +13,15 @@ class travelBotdistance():
 	def timeDist(self, start_location, end_locations):
 
 		now = datetime.now()
-		matrix = self.client.distance_matrix(start_location, end_locations,
+		print now
+		matrix = self.client.distance_matrix(start_location, end_locations ,
 											mode="driving",
-											language="en-AU",
 											avoid="tolls",
-											units="imperial",
-											departure_time=now,
-											traffic_model="optimistic")
+											units="imperial"
+											)
 		return matrix
+
+
+# a = travelBotdistance()
+# a.setUp()
+# print a.timeDist("london","manchester, UK")
