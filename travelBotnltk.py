@@ -47,8 +47,8 @@ class travelBotnltk():
 
 	def classify(self, text):
 		test = self.create_test(text, self.all_words)
-		print(test)
-		print(self.classifier.classify(test))
+		res = self.classifier.classify(test))
+		return res
 
 	def load_training_set(self, file_name):
 		ps = PorterStemmer()
@@ -117,8 +117,3 @@ if __name__ == "__main__":
 	#a.save()
 	a.classify("I look for 2 nights")
 	
-#print t
-
-#print find_features(word_tokenize('I can spend up to 250'.lower()))
-
-#print training
