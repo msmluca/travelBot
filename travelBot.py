@@ -3,6 +3,7 @@ from telegram import Updater, Bot, ReplyKeyboardMarkup, ForceReply, ReplyKeyboar
 import travelBotdistance
 import travelBotdestinations
 import travelBotnltk
+
 import travelBotjourney
 
 from random import randint, sample
@@ -20,7 +21,6 @@ class TravelBot:
 		self.bot = Updater(auth_key)
 		self.manualbot = Bot(token=auth_key)
 		
-
 		# Initialize google distance class
 		self.googleDist = travelBotdistance.travelBotdistance()
 		self.googleDist.setUp()
@@ -36,7 +36,7 @@ class TravelBot:
 		dp.addErrorHandler(self.error)
 
 		dest = travelBotdestinations.travelBotdestinations()
-		self.travelDestinations = dest.load_destinations('destinations_test.csv')
+		self.travelDestinations = dest.load_destinations('./csv/destinations_test.csv')
 		self.botnltk = travelBotnltk.travelBotnltk()
 
 
@@ -77,6 +77,7 @@ class TravelBot:
 		self.message_event(bot,update.message)
 		bot.sendMessage(update.message.chat_id, text='Help me!')
 
+
 	def search(self, bot, update):
 		self.message_event(bot,update.message)
 
@@ -86,27 +87,58 @@ class TravelBot:
 			bot.sendMessage(update.message.chat_id, text=user.first_name + ' send me your location.')
 			return
 
+		#Start the journey now!
+		print("Search start")
+		self.travelJourney(None, update.message.chat_id, update.message.from_user.id,None)
+		#self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)] = [self.travelJourney,None]
+
 		#bot.sendChatAction(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING)
-		print("Looking for a place...")
-		places = self.googleDist.timeDist(str(user.latitude) + " " + str(user.longitude), self.travelDestinations)
-		print(places)
-		bot_answer = places['destination_addresses']
-
-		i=0
-
-		for key, value in places.iteritems():
-			if key == 'rows':
-				for row_key, row_value in value[0].iteritems():
-					for result in row_value:
-						bot_answer[i] = bot_answer[i] + " " + result['duration']['text']
-						i += 1
-			
+		#print("Looking for a place...")
+		#places = self.googleDist.timeDist(str(user.latitude) + " " + str(user.longitude), self.travelDestinations)
+		#print(places)
 		
 		#reply_markup = ReplyKeyboardMarkup([bot_answer])
-		for answer in bot_answer:
-			bot.sendMessage(update.message.chat_id, text=answer)
+		#for answer in bot_answer:
+		#	bot.sendMessage(update.message.chat_id, text=answer)
 		
 		#self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)] = self.whereeat.select_place
+
+
+	def travelJourney(self, question_key, chat_id, user_id, msg):
+		chat = self.chats[chat_id]
+		print("Travel Journey call")
+
+		# Check if I got an answer from a question
+		if question_key != None:
+			# extract from msg the answer
+			print(msg)
+			if chat.journey.get_answer_type(question_key)!='LIST':
+				ret = chat.journey.set_attribute(question_key, msg)
+				chat.journey.complete_answer(question_key,1)
+				if ret == -1:
+					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question('ERROR'))
+					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(question_key))
+					return
+			else:
+				if msg == 'Done':
+					chat.journey.complete_answer(question_key,1)
+				else:
+					ret = chat.journey.set_attribute(question_key, msg)
+					if ret == -1:
+						self.manualbot.sendMessage(chat_id, text=chat.journey.get_question('ERROR'))
+						self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(question_key))
+						return
+			
+		next_key_journey = chat.journey.next_missing()
+		if next_key_journey != None:
+			# Next question
+			self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(next_key_journey))
+			self.chat_user_actions[(chat_id, user_id)] = [self.travelJourney,next_key_journey]
+		else:
+			#end of the journey
+			del self.chat_user_actions[(chat_id, user_id)]
+			print("we got everything")
+
 
 	def echo(self, bot, update):
 		if not (self.is_a_new_chat(update.message.chat.id)):
@@ -115,20 +147,23 @@ class TravelBot:
 
 		self.message_event(bot,update.message)
 
-		msg_meaning = self.botnltk.classify(update.message.text)
-		bot.sendMessage(update.message.chat_id, text=msg_meaning)
+		#msg_meaning = self.botnltk.classify(update.message.text)
+		#bot.sendMessage(update.message.chat_id, text=msg_meaning)
 
-		logging.debug(update.message)
 		
 		# Check if the msg is a reply to a previous command
 		if (update.message.chat_id, update.message.from_user.id) in self.chat_user_actions:
-			_call_method = self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)]
-			ret = _call_method( chat_id = update.message.chat_id, user_id = update.message.from_user.id, is_admin = self.is_security_cleared(update.message.from_user.id), msg = update.message.text)
+			_call_method, question_key = self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)]
+			ret = _call_method( 
+				question_key = question_key,
+				chat_id = update.message.chat_id, 
+				user_id = update.message.from_user.id, 
+				msg = update.message.text)
 			
-			bot.sendLocation(update.message.chat_id, latitude=float(ret['lat']), longitude=float(ret['lng']))
+#			bot.sendLocation(update.message.chat_id, latitude=float(ret['lat']), longitude=float(ret['lng']))
 
-			bot.sendMessage(update.message.chat_id, text='Got it!', reply_markup=ReplyKeyboardHide())				
-			del self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)]
+#			bot.sendMessage(update.message.chat_id, text='Got it!', reply_markup=ReplyKeyboardHide())				
+#			del self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)]
 
 
 	def error(bot, update, error, error2):

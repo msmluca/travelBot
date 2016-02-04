@@ -22,8 +22,8 @@ class travelBotnltk():
 	def __init__(self):
 
 		# load last classifier
-		if os.path.isfile("./naivebayes.pickle") :
-			classifier_f = open("./naivebayes.pickle", "rb")
+		if os.path.isfile("./nldata/naivebayes.pickle") :
+			classifier_f = open("./nldata/naivebayes.pickle", "rb")
 			self.classifier = pickle.load(classifier_f)
 			classifier_f.close()
 		if os.path.isfile("./nldata/all_words.pickle"): 
