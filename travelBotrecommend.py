@@ -1,4 +1,3 @@
-import pandas as pd
 import travelBotdestinations as da
 import travelBotdistance as dd
 import travelBothotels as dh
