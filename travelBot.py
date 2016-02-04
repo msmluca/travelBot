@@ -101,12 +101,9 @@ class TravelBot:
 
 		for key, value in places.iteritems():
 			if key == 'rows':
-				print value[0]
 				for row_key, row_value in value[0].iteritems():
-					print row_value
 					for result in row_value:
 						bot_answer[i] = bot_answer[i] + " " + result['duration']['text']
-						print bot_answer
 						i += 1
 			
 		
