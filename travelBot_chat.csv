@@ -1,0 +1,7 @@
+Sentence, Meaning, Comments
+"Find a place for 2 nights","DAYS","number of days"
+"At maximum 3 hours from here","MAXTIME","max time travel"
+"Find a place for 2 days","DAYS","number of days"
+"I don't want to travel more than 1 hour","MAXTIME","max"
+"My budget is 300","MAXMONEY","max budget"
+"I don't want to spend more than 300","MAXMONEY","max budget"

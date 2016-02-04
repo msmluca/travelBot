@@ -30,19 +30,19 @@ class TravelBot:
 		dp.addTelegramMessageHandler(self.echo)
 		dp.addErrorHandler(self.error)
 
-		self.travelDestinations = load_destinations('destinations.csv')
+		self.travelDestinations = self.load_destinations('destinations.csv')
 
 
 	def load_destinations(self, file_name):
 		travelDestinations = list()
 
 		with open(file_name, 'rb') as csvfile:
-			destinations = csv.reader(csvfile, delimiter=' ', quotechar='"')
+			destinations = csv.reader(csvfile, delimiter=',', quotechar='"')
 			next(destinations)
 			for row in destinations:
 				travelDestinations.append(row[0]+" , UK")
 		 
-		 return travelDestinations
+		return travelDestinations
 
 	def is_security_cleared(self, user_id):
 		if user_id in self.users:
@@ -233,7 +233,7 @@ class DeboscioUser:
 
 
 
-trbot = TravelBot('156902885:AAHBx4JrD1q35xMHrHjH_tsAe760j2f2Uz4')
+trbot = TravelBot('182627058:AAE-km8osu8MKE8n6Y3vOSJ89Kn6oLrlih8')
 
 # Start the Bot
 trbot.bot.start_polling()
