@@ -5,7 +5,7 @@ import operator
 
 class travelBotrecommend():
 
-	def top_hotels(self, dest_activities, dest_weather, dest_time, activity, max_time, max_budget):
+	def top_hotels(self, dest_activities, dest_weather, dest_time, activity, max_time, nights, max_budget):
 
 		dh_obj = dh.travelBothotels()
 		res = {}
@@ -39,9 +39,10 @@ class travelBotrecommend():
 		# Calculate ratings for each destination-hotel combination
 		for destination, dest_details in dest_activities.iteritems():
 			for hotel, hotel_details in dh_obj.load_hotels("./csv/hotel_info.csv", destination).iteritems():
-				res[(destination,hotel)] = float(hotel_details['Star Rating'])/5.0 \
-											+ float(hotel_details['Review'])/100.0 \
-											+ (1-(float(dest_details[activity])/40.0))
+				if float(hotel_details['Price'])*nights <= max_budget and int(dest_time[destination][1]) <= max_time:
+					res[(destination,hotel)] = float(hotel_details['Star Rating'])/5.0 \
+												+ float(hotel_details['Review'])/100.0 \
+												+ (1-(float(dest_details[activity])/40.0))
 
 		# Top 3 results
 		res_sorted = sorted(res.iteritems(), key=operator.itemgetter(1), reverse=True)
@@ -51,6 +52,7 @@ class travelBotrecommend():
 			city = res_sorted[i][0][0]
 			if city not in city_top3:
 				res_top3.append(res_sorted[i])
+				city_top3.append(res_sorted[i][0][0])
 				if len(res_top3) == 3:
 					break
 
@@ -75,6 +77,6 @@ if __name__ == "__main__":
 	dest_time = dd_obj.timeDist('london, uk', dest_list)
 
 	rec = travelBotrecommend()
-	res = rec.top_hotels(dest_activities, dest_weather, dest_time, 'Museums', 0, 0)
+	res = rec.top_hotels(dest_activities, dest_weather, dest_time, 'Museums', 10000, 2, 1000)
 
 	print(res)
