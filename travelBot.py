@@ -36,7 +36,7 @@ class TravelBot:
 	def load_destinations(self, file_name):
 		travelDestinations = list()
 
-		with open(file_name, 'rb') as csvfile:
+		with open(file_name, 'r') as csvfile:
 			destinations = csv.reader(csvfile, delimiter=',', quotechar='"')
 			next(destinations)
 			for row in destinations:
