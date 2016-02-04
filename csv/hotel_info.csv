@@ -1,377 +1,377 @@
-,City,Hotel,Price,Star Rating,Review
-0,York, Ascot House Hotel York (England),115.31,4,92.0
-1,York, Georgian House,64.69,3,80.0
-2,York, Park Inn by Radisson York City Centre,108.54,3,82.0
-3,York, Holgate Bridge York,64.26,3,82.0
-4,York, Marriott York,131.13,4,80.0
-5,York, Novotel York Centre,120.43,3,81.0
-6,York, Best Western Kilima Hotel,87.28,3,82.0
-7,York, 53,99.68,3,81.0
-8,York, Best Western York Pavilion Hotel,80.0,3,82.0
-9,York, The Farthings Guest House,70.06,4,90.0
-10,Newcastle, Hilton Newcastle Gateshead,98.07,4,83.0
-11,Newcastle, Royal Station,97.48,3,80.0
-12,Newcastle, Malmaison Newcastle,110.42,4,83.0
-13,Newcastle, Jurys Inn Newcastle Gateshead Quays,71.5,3,84.0
-14,Newcastle, Copthorne Hotel Newcastle,100.27,4,80.0
-15,Newcastle, Novotel Newcastle Airport,71.2,3,81.0
-16,Newcastle, Holiday Inn Express Newcastle City Centre,96.99,3,85.0
-17,Newcastle, The Vermont Newcastle,122.32,4,86.0
-18,Newcastle, Indigo Newcastle,122.36,4,90.0
-19,Newcastle, Staybridge Suites Newcastle,128.48,4,93.0
-20,Leeds, Radisson Blu Leeds,111.99,4,82.0
-21,Leeds, Leeds Marriott Hotel,113.99,4,86.0
-22,Leeds, Hilton Leeds City,119.58,4,80.0
-23,Leeds, The Queens,126.84,4,86.0
-24,Leeds, Jurys Inn Leeds,89.77,4,85.0
-25,Leeds, Clayton Hotel Leeds,86.61,3,82.0
-26,Leeds, Novotel Leeds Centre,104.58,3,86.0
-27,Leeds, Quebecs,126.17,4,88.0
-28,Leeds, Malmaison Leeds,120.79,4,85.0
-29,Leeds, Roomzzz - Leeds City,104.75,3,91.0
-30,Hull, Holiday Inn Express Hull City Centre,50.95,3,84.0
-31,Hull, Holiday Inn Hull Marina,76.71,3,86.0
-32,Hull, Gilson,36.71,3,72.0
-33,Hull, Campanile Hull,40.86,2,76.0
-34,Hull, Mercure Royal,56.88,3,78.0
-35,Hull, Kingston Theatre Hotel,59.62,3,88.0
-36,Hull, Ibis Hull,46.75,3,79.0
-37,Hull, Trinity Hotel,35.84,3,63.0
-38,Hull, De Vere Village Urban Resort Hull,55.76,3,85.0
-39,Hull, Acorn Guest House,55.59,4,87.0
-40,Derby, Holiday Inn Derby - Riverlights,59.31,4,84.0
-41,Derby, Jurys Inn Derby,59.04,3,86.0
-42,Derby, Hallmark Inn Derby,43.13,3,79.0
-43,Derby, pentahotel Derby,66.27,3,81.0
-44,Derby, Stuart,46.54,4,70.0
-45,Derby, Days Derby,37.53,3,75.0
-46,Derby, Aston Court,44.11,3,79.0
-47,Derby, Menzies Mickleover Court,69.33,4,84.0
-48,Derby, International,44.87,3,69.0
-49,Derby, Cathedral Quarter,79.52,4,77.0
-50,Skegness, Best Western North Shore Hotel & Golf Club,63.45,3,0.0
-51,Skegness, Eastleigh Hotel,41.08,3,0.0
-52,Skegness, Best Western Vine Hotel,73.04,3,0.0
-53,Skegness, The Crown,73.6,3,0.0
-54,Skegness, The Lyndsay Guest House,60.45,4,0.0
-55,Skegness, Southview Park Hotel,55.97,3,0.0
-56,Skegness, Stepping Stones,53.19,3,0.0
-57,Skegness, The Clarendon Lodge,59.18,3,0.0
-58,Skegness, Clarence House Hotel,55.87,4,0.0
-59,Skegness, Bell Hotel,55.72,3,0.0
-60,Loughborough, Charnwood Lodge,60.4,4,85.0
-61,Loughborough, The Cedars,49.41,3,75.0
-62,Loughborough, Ramada Loughborough Hotel,55.04,3,69.0
-63,Loughborough, The Hunting Lodge,62.59,4,81.0
-64,Loughborough, Garendon Park,55.39,3,84.0
-65,Loughborough, Best Western Premier Yew Lodge Hotel & Conference Centre,76.79,3,82.0
-66,Loughborough," Kegworth Hotel & Conference Centre, East Midlands Airport, M1, Junc 24",52.25,3,77.0
-67,Loughborough, The Rothley Court,75.3,3,83.0
-68,Loughborough, Kegworth House Hotel - Guest House,70.22,3,93.0
-69,Loughborough, Premier Inn Loughborough,64.42,3,86.0
-70,Nottingham, Mercure Nottingham City Centre Hotel,64.95,4,83.0
-71,Nottingham, Crowne Plaza Nottingham,74.05,4,80.0
-72,Nottingham, Ibis Nottingham Centre,63.04,4,81.0
-73,Nottingham, Jurys Inn Nottingham,61.11,3,80.0
-74,Nottingham, Hilton Nottingham,78.34,4,74.0
-75,Nottingham, Britannia Nottingham,57.41,3,63.0
-76,Nottingham, Holiday Inn Nottingham,63.68,3,82.0
-77,Nottingham, Park Inn by Radisson Nottingham,68.45,3,72.0
-78,Nottingham, Park Plaza Nottingham,76.55,4,78.0
-79,Nottingham, St James Hotel,67.09,4,85.0
-80,Brighton, Thistle Brighton,132.17,4,82.0
-81,Brighton, Myhotel Brighton,105.83,4,84.0
-82,Brighton, Hudsons,63.13,4,82.0
-83,Brighton, Ibis Brighton City Centre,102.16,3,84.0
-84,Brighton, Umi Brighton,102.73,3,77.0
-85,Brighton, Preston Park,79.05,3,65.0
-86,Brighton, Britannia Royal Albion,87.96,3,62.0
-87,Brighton, Old Ship,87.06,4,76.0
-88,Brighton, Hotel du Vin Brighton,168.13,4,84.0
-89,Brighton, Hilton Brighton Metropole,147.0,4,73.0
-90,Cambridge, Holiday Inn Cambridge,84.17,3,80.0
-91,Cambridge, Holiday Inn Express Cambridge,73.38,3,80.0
-92,Cambridge, Rectory Farm,65.03,3,86.0
-93,Cambridge, DoubleTree by Hilton Cambridge,153.45,4,79.0
-94,Cambridge, Cambridge City Hotel,198.13,4,87.0
-95,Cambridge, Best Western Plus Gonville Hotel,147.65,3,84.0
-96,Cambridge, Brooklands Guest House,71.66,3,66.0
-97,Cambridge, Felix,154.67,4,83.0
-98,Cambridge, Hotel du Vin Cambridge,209.65,4,82.0
-99,Cambridge, Aylesbray Lodge,70.41,4,64.0
-100,Canterbury, Best Western Abbots Barton,137.98,3,0.0
-101,Canterbury, The Victoria Hotel,103.15,3,0.0
-102,Canterbury, Howfield Manor Hotel,78.27,3,0.0
-103,Canterbury, Holiday Inn Express Canterbury,69.67,3,0.0
-104,Canterbury, The Evenhill,67.76,4,0.0
-105,Canterbury, ABode Canterbury,131.49,4,0.0
-106,Canterbury, The Pilgrims Rest,75.88,4,0.0
-107,Canterbury, The Duke of Cumberland,80.79,4,0.0
-108,Canterbury, Homelea Bed and Breakfast,95.15,5,0.0
-109,Canterbury, The Coach House,114.94,3,0.0
-110,Dover, Ramada Dover,75.89,4,81.0
-111,Dover, Best Western Plus Dover Marina Hotel & Spa,64.31,4,75.0
-112,Dover, Hubert House,85.51,4,86.0
-113,Dover, The West Bank Guest House,49.35,4,78.0
-114,Dover, Loddington House Hotel,67.94,3,76.0
-115,Dover, The White Cliffs,89.47,3,80.0
-116,Dover, Clare House,40.5,3,71.0
-117,Dover, Premier Inn Dover Central (Ferry Terminal),67.81,3,89.0
-118,Dover, Premier Inn Dover (A20),64.94,3,83.0
-119,Dover, Premier Inn Dover East,70.81,3,83.0
-120,Norwich, Maids Head,86.58,4,83.0
-121,Norwich, Mercure Norwich,65.8,3,67.0
-122,Norwich, Stracey Hotel,74.68,3,83.0
-123,Norwich, Lansdowne Hotel and conference Centre Limited,30.88,3,65.0
-124,Norwich, Abbey Guest House,66.48,3,89.0
-125,Norwich, Best Western Annesley House Hotel,86.08,3,85.0
-126,Norwich, Holiday Inn Norwich North,79.54,3,72.0
-127,Norwich, Marriott Sprowston Manor Hotel & Country Club,121.0,3,87.0
-128,Norwich, The Brook,63.29,3,74.0
-129,Norwich, Catton Old Hall,99.54,4,90.0
-130,London, Best Western Victoria Palace,114.77,3,77.0
-131,London, Club Quarters Trafalgar Square,99.03,4,83.0
-132,London, Beauchamp,94.8,4,83.0
-133,London, Grange St Paul's,112.55,5,87.0
-134,London, Novotel London Blackfriars,147.04,4,87.0
-135,London, Dolphin House,117.44,4,82.0
-136,London, Strand Palace Hotel,146.06,4,81.0
-137,London, Club Quarters Lincoln's Inn Fields,120.03,4,87.0
-138,London, The Grand at Trafalgar Square,141.74,4,82.0
-139,London, Kingsway Hall,146.99,4,84.0
-140,Oxford, Oxford Thames Four Pillars,124.43,4,86.0
-141,Oxford, Randolph,182.62,5,80.0
-142,Oxford, Holiday Inn Oxford,96.8,4,81.0
-143,Oxford, Jurys Inn Oxford,64.58,4,72.0
-144,Oxford, Cotswold Lodge,120.94,4,80.0
-145,Oxford, Hawkwell House,104.94,3,83.0
-146,Oxford, Oxford Spires Four Pillars,138.56,4,79.0
-147,Oxford, Malmaison Oxford,212.82,4,83.0
-148,Oxford, Old Parsonage,270.08,4,91.0
-149,Oxford, Westwood Country,85.81,3,80.0
-150,Leicester, Holiday Inn Leicester,94.4,3,81.0
-151,Leicester, Ibis Leicester City,60.64,3,79.0
-152,Leicester, Ramada Leicester Stage,54.57,3,66.0
-153,Leicester, Holiday Inn Express Leicester - Walkers Stadium,76.8,3,77.0
-154,Leicester, Campanile Hotel Leicester,57.7,2,72.0
-155,Leicester, Hilton Leicester,74.05,4,76.0
-156,Leicester, Marriott Leicester,83.3,3,85.0
-157,Leicester, College Court Conference Centre,89.66,4,87.0
-158,Leicester, Days Inn Leicester Forest East M1,47.39,3,76.0
-160,Exeter, ABode Exeter,111.55,4,80.0
-161,Exeter, Jurys Inn Exeter,61.65,3,82.0
-162,Exeter, The Magdalen Chapter,118.62,4,87.0
-163,Exeter, Mercure Southgate,149.59,4,84.0
-164,Exeter, The Rougemont,99.74,4,83.0
-165,Exeter," Holiday Inn Express Exeter M5, Jct 29",79.3,3,85.0
-166,Exeter, Queens Court Hotel,77.07,3,80.0
-167,Exeter, Telstar Guest House Exeter,60.33,4,83.0
-168,Exeter, Buckerell Lodge,64.6,4,80.0
-169,Exeter, Culm Vale Country House,67.93,4,83.0
-170,Bath, Parade Park,149.02,2,74.0
-171,Bath, The Royal Crescent Hotel & Spa,294.26,5,93.0
-172,Bath, Macdonald Bath Spa,224.83,5,85.0
-173,Bath, Tasburgh House,180.22,5,92.0
-174,Bath, High Beeches B & B,85.73,4,88.0
-175,Bath, Francis Hotel Bath - MGallery Collection,249.76,4,88.0
-176,Bath, Homewood Park,185.61,4,81.0
-177,Bath, The Edgar Townhouse,169.87,3,85.0
-178,Bath, The Bath Priory,552.38,5,92.0
-179,Bath, The Ayrlington,275.53,5,87.0
-180,Newquay, Victoria,45.34,3,80.0
-181,Newquay, Best Western Bristol,67.27,3,82.0
-182,Newquay, Glendorgal,52.9,3,78.0
-183,Newquay, Invernook Hotel,50.16,3,93.0
-184,Newquay, Pine Lodge,59.74,4,82.0
-185,Newquay, Trevellis Guest House,65.08,3,91.0
-186,Newquay, Great Western,65.21,3,82.0
-187,Newquay, The Silver Jubilee,65.1,3,85.0
-188,Newquay, Carnmarth Hotel,90.93,4,82.0
-189,Newquay, Trevilla,50.7,4,86.0
-190,Torquay, The Imperial,62.84,4,81.0
-191,Torquay, Bahamas Hotel,44.3,4,85.0
-192,Torquay, Trelawney,48.23,4,89.0
-193,Torquay, The Grand,180.76,4,80.0
-194,Torquay, Cranborne Guest Accommodation,55.4,4,88.0
-195,Torquay, Robin Hill,62.61,4,90.0
-196,Torquay, Iona,58.86,4,82.0
-197,Torquay, Ashurst Lodge,55.98,3,82.0
-198,Torquay, Crimdon Dene,68.41,4,97.0
-199,Torquay, Ferndale - Lodge,57.86,4,90.0
-200,Bristol, Mercure Bristol Grand Hotel,89.04,4,82.0
-201,Bristol, Mercure Holland House Bristol,96.69,4,80.0
-202,Bristol, DoubleTree by Hilton Hotel Bristol City Centre,98.0,4,86.0
-203,Bristol, Marriott Bristol City Centre,93.42,4,87.0
-204,Bristol, Novotel Bristol Centre,88.67,4,83.0
-205,Bristol, Mercure Brigstow Bristol,105.86,4,85.0
-206,Bristol, Holiday Inn Bristol City Centre,89.21,4,84.0
-207,Bristol, Radisson Blu Hotel Bristol,103.97,4,86.0
-208,Bristol, Future Inn Bristol,82.65,4,84.0
-209,Bristol, Marriott Royal Bristol,113.1,4,86.0
-210,Salford, Radisson Blu Edwardian Manchester Hotel,201.67,5,87.0
-211,Salford, Ramada Manchester Salford Quays,77.75,4,81.0
-212,Salford, Ascott,66.58,4,81.0
-213,Salford, Holiday Inn Manchester - Mediacityuk,109.63,4,87.0
-214,Salford, Renaissance Manchester,139.06,4,88.0
-215,Salford, Marriott Victoria & Albert,139.16,4,84.0
-216,Salford, DoubleTree by Hilton Hotel Manchester - Piccadilly,138.68,4,87.0
-217,Salford, Crowne Plaza City Centre,131.93,4,90.0
-218,Salford, The Light Hotel,116.25,4,81.0
-219,Salford, The Portland Hotel,92.05,3,81.0
-220,falmouth, The Oasis Guest House,55.61,3,86.0
-221,falmouth, Best Western Penmere Manor,85.29,3,83.0
-222,falmouth, St Michaels Hotel & Spa,110.65,4,85.0
-223,falmouth, Hawthorne Dene,80.42,3,82.0
-224,falmouth, Lyonesse Guest House,85.18,3,96.0
-225,falmouth, Falmouth Beach Hotel,74.68,3,78.0
-226,falmouth, The Royal Duchy,108.48,4,90.0
-227,falmouth, The Grove Hotel - Guest House,84.94,3,89.0
-228,falmouth, Lugo Rock,65.46,4,88.0
-229,falmouth, The Falmouth,99.84,3,81.0
-230,Plymouth, Jurys Inn Plymouth,58.56,3,81.0
-231,Plymouth, Caledonia Guest House,48.98,3,90.0
-232,Plymouth, Future Inn Plymouth,49.47,3,86.0
-233,Plymouth, Holiday Inn Plymouth,84.37,4,79.0
-234,Plymouth, New Continental,72.12,3,82.0
-235,Plymouth, The Caraneal Hotel - Guest house,55.36,3,88.0
-236,Plymouth, Copthorne Hotel Plymouth,67.08,4,78.0
-237,Plymouth, Best Western Duke Of Cornwall,68.45,3,81.0
-238,Plymouth, Barbican Reach Bed & Breakfast - B&B,70.85,3,93.0
-239,Plymouth, Number One,73.85,3,91.0
-240,Penzance, Penzance,95.68,3,88.0
-241,Penzance, Dunedin,75.43,4,94.0
-242,Penzance, Sea Waves B&B,50.2,3,67.0
-243,Penzance, Torwood House,62.38,4,90.0
-244,Penzance, Higher Faugan Parc,99.4,4,89.0
-245,Penzance, Beachfield Hotel,98.17,3,85.0
-246,Penzance, Queens,90.35,3,74.0
-247,Penzance, Penrose Guest House,59.85,4,89.0
-248,Penzance, Whiteways Guest House,56.33,2,63.0
-249,Penzance, The Old Vicarage,65.49,4,92.0
-250,John O'Groats, Seaview Hotel,85.06,3,89.0
-251,John O'Groats, Ackergill Tower,97.2,5,82.0
-252,John O'Groats, Park Hotel,94.47,3,68.0
-253,John O'Groats, Royal,60.76,3,74.0
-254,John O'Groats, A Castle View,70.74,4,79.0
-255,John O'Groats, Northern Sands Hotel,79.06,3,74.0
-256,John O'Groats, Norseman,83.12,3,78.0
-257,John O'Groats, The Weigh Inn,60.49,3,88.0
-258,John O'Groats, The Castletown,60.94,2,81.0
-259,John O'Groats, Mackays Hotel,143.0,3,77.0
-260,Pitlochry, Fisher's Hotel,84.04,3,81.0
-261,Pitlochry, Atholl Palace,168.17,4,81.0
-262,Pitlochry, Crerar Scotland's Hotel & Spa,80.63,3,74.0
-263,Pitlochry, Craigvrack,70.34,3,84.0
-264,Pitlochry, Fonab Castle,267.68,5,94.0
-265,Pitlochry, Pine Trees,114.54,4,88.0
-266,Pitlochry, Acarsaid,94.66,3,90.0
-267,Pitlochry, Rosemount Hotel,103.59,3,81.0
-268,Pitlochry, Cuil-An-Daraich Guest House,59.04,3,82.0
-269,Pitlochry, The Moulin Hotel,73.64,3,78.0
-270,Lochalsh, Benmiller Inn & Spa,88.33,3,0.0
-271,Lochalsh, Howard Johnson Kincardine,54.98,3,0.0
-272,Lochalsh, Maple Leaf Inn,58.94,2,0.0
-273,Lochalsh, Colborne Bed and Breakfast,54.15,3,0.0
-274,Lochalsh, Lakeview Motel,37.44,2,0.0
-275,Lochalsh, Super 8 Port Elgin,95.76,2,0.0
-276,Lochalsh, Port Albert Cottages,44.96,3,0.0
-277,Lochalsh, Samuel's Boutique Hotel,62.51,2,0.0
-278,Lochalsh, Super 8 Motel - Port Elgin,84.88,2,0.0
-279,Lochalsh, Three Gables B&B,64.62,3,0.0
-281,Lochalsh, Holiday Inn Express & Suites Kincardine Downtown,98.31,2,0.0
-291,Manchester, Macdonald Manchester,115.03,4,82.0
-294,Manchester, Britannia Hotel Manchester City Centre,76.9,3,66.0
-295,Manchester, Novotel Manchester Centre,123.51,3,82.0
-296,Manchester, The Midland,169.42,4,87.0
-297,Manchester, Abode,120.37,4,83.0
-299,Manchester, Velvet,128.37,4,89.0
-300,Liverpool, Hilton Liverpool,286.2,4,84.0
-301,Liverpool, Radisson Blu Liverpool,171.26,4,82.0
-302,Liverpool, Adagio Liverpool City Centre,135.57,4,86.0
-303,Liverpool, Britannia Adelphi,115.62,3,67.0
-304,Liverpool, Novotel Liverpool Centre,210.28,4,85.0
-305,Liverpool, Heywood House,164.18,4,88.0
-306,Liverpool, Malmaison Liverpool,149.58,4,83.0
-307,Liverpool, Premier Apartments Liverpool,135.72,4,89.0
-308,Liverpool, Marriott Liverpool City Centre,235.48,4,85.0
-309,Liverpool, Hampton by Hilton Liverpool City Centre,137.68,3,86.0
-310,Chester, Best Western Premier Queen,126.09,4,87.0
-311,Chester, ABode Chester,123.47,4,86.0
-312,Chester, Crowne Plaza Chester,126.11,4,88.0
-313,Chester, Macdonald New Blossoms,132.56,4,82.0
-314,Chester, Doubletree Chester,138.87,4,86.0
-315,Chester, The Chester Grosvenor & Grosvenor Spa,165.85,5,90.0
-316,Chester, The Grosvenor Pulford,82.06,4,87.0
-317,Chester, Brookside Hotel,84.67,3,83.0
-318,Chester, Best Western Llyndir Hall Hotel & Spa,68.35,4,80.0
-319,Chester, Brook Mollington Banastre Hotel & Spa,94.9,4,69.0
-320,Windermere, Beaumont House,95.23,5,92.0
-321,Windermere, The Lamplighter,90.51,4,84.0
-322,Windermere, Southview Guest House & Indoor Pool,100.42,4,95.0
-323,Windermere, Thornbank Guest House,80.0,4,91.0
-324,Windermere, Bonny Brae Guest House,75.24,3,93.0
-325,Windermere, Macdonald Old England,197.51,4,85.0
-326,Windermere, Dene House,90.29,4,95.0
-327,Windermere, The Burn How Garden House,160.24,3,87.0
-328,Windermere, The Westbourne,135.29,4,94.0
-329,Windermere, Craig Manor,96.22,3,82.0
-330,Penrith, North Lakes and Spa,114.55,4,0.0
-331,Penrith, Abbey House B&B,63.56,4,0.0
-332,Penrith, George Hotel,90.2,3,0.0
-333,Penrith, The White House Experience,100.56,4,0.0
-334,Penrith, Roundthorn Country House,104.59,5,0.0
-335,Penrith, Brandelhow Guest House,78.12,4,0.0
-336,Penrith, Queens Head Inn,60.66,3,0.0
-337,Penrith, Rampsbeck Country House Hotel,221.03,3,0.0
-338,Penrith, Bank House Bed & Breakfast Penrith,86.98,4,0.0
-339,Penrith, The Brantwood Hotel,65.34,4,0.0
-340,Southport, Vincent,98.17,4,0.0
-341,Southport, Britannia Scarisbrick,54.11,3,0.0
-342,Southport, Clifton Villa,70.88,4,0.0
-343,Southport, Best Western Royal Clifton,94.61,3,0.0
-344,Southport, Britannia Prince of Wales,69.79,3,0.0
-345,Southport, The Penkelie,65.32,2,0.0
-346,Southport, Cambridge House Hotel,75.42,3,0.0
-347,Southport, The Stamford,70.43,4,0.0
-348,Southport, Pontin's Southport Holiday Park,120.88,2,0.0
-349,Southport, Crescent House Hotel - Guest House,62.02,3,0.0
-350,Morecambe, Morecambe Bay Guest House,52.1,3,89.0
-351,Morecambe, Westleigh,50.9,3,73.0
-352,Morecambe, The Midland Hotel,118.96,4,87.0
-353,Morecambe, Lancaster House,93.99,4,87.0
-354,Morecambe, Thurnham Hall,65.08,4,90.0
-355,Morecambe, St Winifreds,65.07,2,62.0
-356,Morecambe, Royal Kings Arms Hotel,61.07,3,74.0
-357,Morecambe, The Royal Hotel (Latinos),67.49,3,80.0
-358,Morecambe, Penny Street Bridge,98.23,3,84.0
-359,Morecambe, The Clarendon,65.74,3,97.0
-360,Grasmere, Best Western Grasmere Red Lion,80.47,3,82.0
-361,Grasmere, Langdale Classic & Country Club,185.38,4,89.0
-362,Grasmere, Bridge House,80.4,3,85.0
-363,Grasmere, Moss Grove Organic,119.85,5,86.0
-364,Grasmere, Best Western Ambleside Salutation,209.69,3,91.0
-365,Grasmere, Claremont House,69.51,4,94.0
-366,Grasmere, Regent Hotel,114.86,3,91.0
-367,Grasmere, Nanny Brow House,130.0,5,92.0
-368,Grasmere, Brathay Lodge,117.22,4,87.0
-369,Grasmere, The Fisherbeck,110.6,4,91.0
-370,Cardiff, Novotel Cardiff Centre,121.88,4,83.0
-371,Cardiff, Mercure Holland House,119.27,4,85.0
-372,Cardiff, Park Plaza Cardiff,118.89,4,88.0
-373,Cardiff, Radisson Blu Cardiff,104.16,4,87.0
-374,Cardiff, Marriott Cardiff,117.91,4,86.0
-375,Cardiff, The Angel Cardiff,76.35,3,74.0
-376,Cardiff, Hilton Cardiff,148.1,4,86.0
-377,Cardiff, The St David's Hotel & Spa,143.66,5,84.0
-378,Cardiff, Holiday Inn Cardiff City,116.65,3,81.0
-379,Cardiff, Park Inn by Radisson Cardiff North Hotel,66.13,3,80.0
-380,Swansea, Dragon,77.94,4,80.0
-381,Swansea, Marriott Swansea,89.24,4,80.0
-382,Swansea, Ibis Swansea,60.21,3,80.0
-383,Swansea, Holiday Inn Express Swansea East,66.89,3,88.0
-384,Swansea, Leonardos Guest House,48.43,3,69.0
-385,Swansea, The Grand Hotel Swansea,62.13,3,84.0
-386,Swansea, Mercure Swansea,65.94,4,83.0
-387,Swansea, De Vere Village Urban Resort Swansea,74.68,3,81.0
-388,Swansea, Premier Inn Swansea City Centre,78.75,3,73.0
-389,Swansea, Dolphin Hotel,67.76,3,83.0
+City,Hotel,Price,Star Rating,Review
+York, Ascot House Hotel York (England),115.31,4,92.0
+York, Georgian House,64.69,3,80.0
+York, Park Inn by Radisson York City Centre,108.54,3,82.0
+York, Holgate Bridge York,64.26,3,82.0
+York, Marriott York,131.13,4,80.0
+York, Novotel York Centre,120.43,3,81.0
+York, Best Western Kilima Hotel,87.28,3,82.0
+York, 53,99.68,3,81.0
+York, Best Western York Pavilion Hotel,80.0,3,82.0
+York, The Farthings Guest House,70.06,4,90.0
+Newcastle, Hilton Newcastle Gateshead,98.07,4,83.0
+Newcastle, Royal Station,97.48,3,80.0
+Newcastle, Malmaison Newcastle,110.42,4,83.0
+Newcastle, Jurys Inn Newcastle Gateshead Quays,71.5,3,84.0
+Newcastle, Copthorne Hotel Newcastle,100.27,4,80.0
+Newcastle, Novotel Newcastle Airport,71.2,3,81.0
+Newcastle, Holiday Inn Express Newcastle City Centre,96.99,3,85.0
+Newcastle, The Vermont Newcastle,122.32,4,86.0
+Newcastle, Indigo Newcastle,122.36,4,90.0
+Newcastle, Staybridge Suites Newcastle,128.48,4,93.0
+Leeds, Radisson Blu Leeds,111.99,4,82.0
+Leeds, Leeds Marriott Hotel,113.99,4,86.0
+Leeds, Hilton Leeds City,119.58,4,80.0
+Leeds, The Queens,126.84,4,86.0
+Leeds, Jurys Inn Leeds,89.77,4,85.0
+Leeds, Clayton Hotel Leeds,86.61,3,82.0
+Leeds, Novotel Leeds Centre,104.58,3,86.0
+Leeds, Quebecs,126.17,4,88.0
+Leeds, Malmaison Leeds,120.79,4,85.0
+Leeds, Roomzzz - Leeds City,104.75,3,91.0
+Hull, Holiday Inn Express Hull City Centre,50.95,3,84.0
+Hull, Holiday Inn Hull Marina,76.71,3,86.0
+Hull, Gilson,36.71,3,72.0
+Hull, Campanile Hull,40.86,2,76.0
+Hull, Mercure Royal,56.88,3,78.0
+Hull, Kingston Theatre Hotel,59.62,3,88.0
+Hull, Ibis Hull,46.75,3,79.0
+Hull, Trinity Hotel,35.84,3,63.0
+Hull, De Vere Village Urban Resort Hull,55.76,3,85.0
+Hull, Acorn Guest House,55.59,4,87.0
+Derby, Holiday Inn Derby - Riverlights,59.31,4,84.0
+Derby, Jurys Inn Derby,59.04,3,86.0
+Derby, Hallmark Inn Derby,43.13,3,79.0
+Derby, pentahotel Derby,66.27,3,81.0
+Derby, Stuart,46.54,4,70.0
+Derby, Days Derby,37.53,3,75.0
+Derby, Aston Court,44.11,3,79.0
+Derby, Menzies Mickleover Court,69.33,4,84.0
+Derby, International,44.87,3,69.0
+Derby, Cathedral Quarter,79.52,4,77.0
+Skegness, Best Western North Shore Hotel & Golf Club,63.45,3,0.0
+Skegness, Eastleigh Hotel,41.08,3,0.0
+Skegness, Best Western Vine Hotel,73.04,3,0.0
+Skegness, The Crown,73.6,3,0.0
+Skegness, The Lyndsay Guest House,60.45,4,0.0
+Skegness, Southview Park Hotel,55.97,3,0.0
+Skegness, Stepping Stones,53.19,3,0.0
+Skegness, The Clarendon Lodge,59.18,3,0.0
+Skegness, Clarence House Hotel,55.87,4,0.0
+Skegness, Bell Hotel,55.72,3,0.0
+Loughborough, Charnwood Lodge,60.4,4,85.0
+Loughborough, The Cedars,49.41,3,75.0
+Loughborough, Ramada Loughborough Hotel,55.04,3,69.0
+Loughborough, The Hunting Lodge,62.59,4,81.0
+Loughborough, Garendon Park,55.39,3,84.0
+Loughborough, Best Western Premier Yew Lodge Hotel & Conference Centre,76.79,3,82.0
+Loughborough," Kegworth Hotel & Conference Centre, East Midlands Airport, M1, Junc 24",52.25,3,77.0
+Loughborough, The Rothley Court,75.3,3,83.0
+Loughborough, Kegworth House Hotel - Guest House,70.22,3,93.0
+Loughborough, Premier Inn Loughborough,64.42,3,86.0
+Nottingham, Mercure Nottingham City Centre Hotel,64.95,4,83.0
+Nottingham, Crowne Plaza Nottingham,74.05,4,80.0
+Nottingham, Ibis Nottingham Centre,63.04,4,81.0
+Nottingham, Jurys Inn Nottingham,61.11,3,80.0
+Nottingham, Hilton Nottingham,78.34,4,74.0
+Nottingham, Britannia Nottingham,57.41,3,63.0
+Nottingham, Holiday Inn Nottingham,63.68,3,82.0
+Nottingham, Park Inn by Radisson Nottingham,68.45,3,72.0
+Nottingham, Park Plaza Nottingham,76.55,4,78.0
+Nottingham, St James Hotel,67.09,4,85.0
+Brighton, Thistle Brighton,132.17,4,82.0
+Brighton, Myhotel Brighton,105.83,4,84.0
+Brighton, Hudsons,63.13,4,82.0
+Brighton, Ibis Brighton City Centre,102.16,3,84.0
+Brighton, Umi Brighton,102.73,3,77.0
+Brighton, Preston Park,79.05,3,65.0
+Brighton, Britannia Royal Albion,87.96,3,62.0
+Brighton, Old Ship,87.06,4,76.0
+Brighton, Hotel du Vin Brighton,168.13,4,84.0
+Brighton, Hilton Brighton Metropole,147.0,4,73.0
+Cambridge, Holiday Inn Cambridge,84.17,3,80.0
+Cambridge, Holiday Inn Express Cambridge,73.38,3,80.0
+Cambridge, Rectory Farm,65.03,3,86.0
+Cambridge, DoubleTree by Hilton Cambridge,153.45,4,79.0
+Cambridge, Cambridge City Hotel,198.13,4,87.0
+Cambridge, Best Western Plus Gonville Hotel,147.65,3,84.0
+Cambridge, Brooklands Guest House,71.66,3,66.0
+Cambridge, Felix,154.67,4,83.0
+Cambridge, Hotel du Vin Cambridge,209.65,4,82.0
+Cambridge, Aylesbray Lodge,70.41,4,64.0
+Canterbury, Best Western Abbots Barton,137.98,3,0.0
+Canterbury, The Victoria Hotel,103.15,3,0.0
+Canterbury, Howfield Manor Hotel,78.27,3,0.0
+Canterbury, Holiday Inn Express Canterbury,69.67,3,0.0
+Canterbury, The Evenhill,67.76,4,0.0
+Canterbury, ABode Canterbury,131.49,4,0.0
+Canterbury, The Pilgrims Rest,75.88,4,0.0
+Canterbury, The Duke of Cumberland,80.79,4,0.0
+Canterbury, Homelea Bed and Breakfast,95.15,5,0.0
+Canterbury, The Coach House,114.94,3,0.0
+Dover, Ramada Dover,75.89,4,81.0
+Dover, Best Western Plus Dover Marina Hotel & Spa,64.31,4,75.0
+Dover, Hubert House,85.51,4,86.0
+Dover, The West Bank Guest House,49.35,4,78.0
+Dover, Loddington House Hotel,67.94,3,76.0
+Dover, The White Cliffs,89.47,3,80.0
+Dover, Clare House,40.5,3,71.0
+Dover, Premier Inn Dover Central (Ferry Terminal),67.81,3,89.0
+Dover, Premier Inn Dover (A20),64.94,3,83.0
+Dover, Premier Inn Dover East,70.81,3,83.0
+Norwich, Maids Head,86.58,4,83.0
+Norwich, Mercure Norwich,65.8,3,67.0
+Norwich, Stracey Hotel,74.68,3,83.0
+Norwich, Lansdowne Hotel and conference Centre Limited,30.88,3,65.0
+Norwich, Abbey Guest House,66.48,3,89.0
+Norwich, Best Western Annesley House Hotel,86.08,3,85.0
+Norwich, Holiday Inn Norwich North,79.54,3,72.0
+Norwich, Marriott Sprowston Manor Hotel & Country Club,121.0,3,87.0
+Norwich, The Brook,63.29,3,74.0
+Norwich, Catton Old Hall,99.54,4,90.0
+London, Best Western Victoria Palace,114.77,3,77.0
+London, Club Quarters Trafalgar Square,99.03,4,83.0
+London, Beauchamp,94.8,4,83.0
+London, Grange St Paul's,112.55,5,87.0
+London, Novotel London Blackfriars,147.04,4,87.0
+London, Dolphin House,117.44,4,82.0
+London, Strand Palace Hotel,146.06,4,81.0
+London, Club Quarters Lincoln's Inn Fields,120.03,4,87.0
+London, The Grand at Trafalgar Square,141.74,4,82.0
+London, Kingsway Hall,146.99,4,84.0
+Oxford, Oxford Thames Four Pillars,124.43,4,86.0
+Oxford, Randolph,182.62,5,80.0
+Oxford, Holiday Inn Oxford,96.8,4,81.0
+Oxford, Jurys Inn Oxford,64.58,4,72.0
+Oxford, Cotswold Lodge,120.94,4,80.0
+Oxford, Hawkwell House,104.94,3,83.0
+Oxford, Oxford Spires Four Pillars,138.56,4,79.0
+Oxford, Malmaison Oxford,212.82,4,83.0
+Oxford, Old Parsonage,270.08,4,91.0
+Oxford, Westwood Country,85.81,3,80.0
+Leicester, Holiday Inn Leicester,94.4,3,81.0
+Leicester, Ibis Leicester City,60.64,3,79.0
+Leicester, Ramada Leicester Stage,54.57,3,66.0
+Leicester, Holiday Inn Express Leicester - Walkers Stadium,76.8,3,77.0
+Leicester, Campanile Hotel Leicester,57.7,2,72.0
+Leicester, Hilton Leicester,74.05,4,76.0
+Leicester, Marriott Leicester,83.3,3,85.0
+Leicester, College Court Conference Centre,89.66,4,87.0
+Leicester, Days Inn Leicester Forest East M1,47.39,3,76.0
+Exeter, ABode Exeter,111.55,4,80.0
+Exeter, Jurys Inn Exeter,61.65,3,82.0
+Exeter, The Magdalen Chapter,118.62,4,87.0
+Exeter, Mercure Southgate,149.59,4,84.0
+Exeter, The Rougemont,99.74,4,83.0
+Exeter," Holiday Inn Express Exeter M5, Jct 29",79.3,3,85.0
+Exeter, Queens Court Hotel,77.07,3,80.0
+Exeter, Telstar Guest House Exeter,60.33,4,83.0
+Exeter, Buckerell Lodge,64.6,4,80.0
+Exeter, Culm Vale Country House,67.93,4,83.0
+Bath, Parade Park,149.02,2,74.0
+Bath, The Royal Crescent Hotel & Spa,294.26,5,93.0
+Bath, Macdonald Bath Spa,224.83,5,85.0
+Bath, Tasburgh House,180.22,5,92.0
+Bath, High Beeches B & B,85.73,4,88.0
+Bath, Francis Hotel Bath - MGallery Collection,249.76,4,88.0
+Bath, Homewood Park,185.61,4,81.0
+Bath, The Edgar Townhouse,169.87,3,85.0
+Bath, The Bath Priory,552.38,5,92.0
+Bath, The Ayrlington,275.53,5,87.0
+Newquay, Victoria,45.34,3,80.0
+Newquay, Best Western Bristol,67.27,3,82.0
+Newquay, Glendorgal,52.9,3,78.0
+Newquay, Invernook Hotel,50.16,3,93.0
+Newquay, Pine Lodge,59.74,4,82.0
+Newquay, Trevellis Guest House,65.08,3,91.0
+Newquay, Great Western,65.21,3,82.0
+Newquay, The Silver Jubilee,65.1,3,85.0
+Newquay, Carnmarth Hotel,90.93,4,82.0
+Newquay, Trevilla,50.7,4,86.0
+Torquay, The Imperial,62.84,4,81.0
+Torquay, Bahamas Hotel,44.3,4,85.0
+Torquay, Trelawney,48.23,4,89.0
+Torquay, The Grand,180.76,4,80.0
+Torquay, Cranborne Guest Accommodation,55.4,4,88.0
+Torquay, Robin Hill,62.61,4,90.0
+Torquay, Iona,58.86,4,82.0
+Torquay, Ashurst Lodge,55.98,3,82.0
+Torquay, Crimdon Dene,68.41,4,97.0
+Torquay, Ferndale - Lodge,57.86,4,90.0
+Bristol, Mercure Bristol Grand Hotel,89.04,4,82.0
+Bristol, Mercure Holland House Bristol,96.69,4,80.0
+Bristol, DoubleTree by Hilton Hotel Bristol City Centre,98.0,4,86.0
+Bristol, Marriott Bristol City Centre,93.42,4,87.0
+Bristol, Novotel Bristol Centre,88.67,4,83.0
+Bristol, Mercure Brigstow Bristol,105.86,4,85.0
+Bristol, Holiday Inn Bristol City Centre,89.21,4,84.0
+Bristol, Radisson Blu Hotel Bristol,103.97,4,86.0
+Bristol, Future Inn Bristol,82.65,4,84.0
+Bristol, Marriott Royal Bristol,113.1,4,86.0
+Salford, Radisson Blu Edwardian Manchester Hotel,201.67,5,87.0
+Salford, Ramada Manchester Salford Quays,77.75,4,81.0
+Salford, Ascott,66.58,4,81.0
+Salford, Holiday Inn Manchester - Mediacityuk,109.63,4,87.0
+Salford, Renaissance Manchester,139.06,4,88.0
+Salford, Marriott Victoria & Albert,139.16,4,84.0
+Salford, DoubleTree by Hilton Hotel Manchester - Piccadilly,138.68,4,87.0
+Salford, Crowne Plaza City Centre,131.93,4,90.0
+Salford, The Light Hotel,116.25,4,81.0
+Salford, The Portland Hotel,92.05,3,81.0
+falmouth, The Oasis Guest House,55.61,3,86.0
+falmouth, Best Western Penmere Manor,85.29,3,83.0
+falmouth, St Michaels Hotel & Spa,110.65,4,85.0
+falmouth, Hawthorne Dene,80.42,3,82.0
+falmouth, Lyonesse Guest House,85.18,3,96.0
+falmouth, Falmouth Beach Hotel,74.68,3,78.0
+falmouth, The Royal Duchy,108.48,4,90.0
+falmouth, The Grove Hotel - Guest House,84.94,3,89.0
+falmouth, Lugo Rock,65.46,4,88.0
+falmouth, The Falmouth,99.84,3,81.0
+Plymouth, Jurys Inn Plymouth,58.56,3,81.0
+Plymouth, Caledonia Guest House,48.98,3,90.0
+Plymouth, Future Inn Plymouth,49.47,3,86.0
+Plymouth, Holiday Inn Plymouth,84.37,4,79.0
+Plymouth, New Continental,72.12,3,82.0
+Plymouth, The Caraneal Hotel - Guest house,55.36,3,88.0
+Plymouth, Copthorne Hotel Plymouth,67.08,4,78.0
+Plymouth, Best Western Duke Of Cornwall,68.45,3,81.0
+Plymouth, Barbican Reach Bed & Breakfast - B&B,70.85,3,93.0
+Plymouth, Number One,73.85,3,91.0
+Penzance, Penzance,95.68,3,88.0
+Penzance, Dunedin,75.43,4,94.0
+Penzance, Sea Waves B&B,50.2,3,67.0
+Penzance, Torwood House,62.38,4,90.0
+Penzance, Higher Faugan Parc,99.4,4,89.0
+Penzance, Beachfield Hotel,98.17,3,85.0
+Penzance, Queens,90.35,3,74.0
+Penzance, Penrose Guest House,59.85,4,89.0
+Penzance, Whiteways Guest House,56.33,2,63.0
+Penzance, The Old Vicarage,65.49,4,92.0
+John O'Groats, Seaview Hotel,85.06,3,89.0
+John O'Groats, Ackergill Tower,97.2,5,82.0
+John O'Groats, Park Hotel,94.47,3,68.0
+John O'Groats, Royal,60.76,3,74.0
+John O'Groats, A Castle View,70.74,4,79.0
+John O'Groats, Northern Sands Hotel,79.06,3,74.0
+John O'Groats, Norseman,83.12,3,78.0
+John O'Groats, The Weigh Inn,60.49,3,88.0
+John O'Groats, The Castletown,60.94,2,81.0
+John O'Groats, Mackays Hotel,143.0,3,77.0
+Pitlochry, Fisher's Hotel,84.04,3,81.0
+Pitlochry, Atholl Palace,168.17,4,81.0
+Pitlochry, Crerar Scotland's Hotel & Spa,80.63,3,74.0
+Pitlochry, Craigvrack,70.34,3,84.0
+Pitlochry, Fonab Castle,267.68,5,94.0
+Pitlochry, Pine Trees,114.54,4,88.0
+Pitlochry, Acarsaid,94.66,3,90.0
+Pitlochry, Rosemount Hotel,103.59,3,81.0
+Pitlochry, Cuil-An-Daraich Guest House,59.04,3,82.0
+Pitlochry, The Moulin Hotel,73.64,3,78.0
+Lochalsh, Benmiller Inn & Spa,88.33,3,0.0
+Lochalsh, Howard Johnson Kincardine,54.98,3,0.0
+Lochalsh, Maple Leaf Inn,58.94,2,0.0
+Lochalsh, Colborne Bed and Breakfast,54.15,3,0.0
+Lochalsh, Lakeview Motel,37.44,2,0.0
+Lochalsh, Super 8 Port Elgin,95.76,2,0.0
+Lochalsh, Port Albert Cottages,44.96,3,0.0
+Lochalsh, Samuel's Boutique Hotel,62.51,2,0.0
+Lochalsh, Super 8 Motel - Port Elgin,84.88,2,0.0
+Lochalsh, Three Gables B&B,64.62,3,0.0
+Lochalsh, Holiday Inn Express & Suites Kincardine Downtown,98.31,2,0.0
+Manchester, Macdonald Manchester,115.03,4,82.0
+Manchester, Britannia Hotel Manchester City Centre,76.9,3,66.0
+Manchester, Novotel Manchester Centre,123.51,3,82.0
+Manchester, The Midland,169.42,4,87.0
+Manchester, Abode,120.37,4,83.0
+Manchester, Velvet,128.37,4,89.0
+Liverpool, Hilton Liverpool,286.2,4,84.0
+Liverpool, Radisson Blu Liverpool,171.26,4,82.0
+Liverpool, Adagio Liverpool City Centre,135.57,4,86.0
+Liverpool, Britannia Adelphi,115.62,3,67.0
+Liverpool, Novotel Liverpool Centre,210.28,4,85.0
+Liverpool, Heywood House,164.18,4,88.0
+Liverpool, Malmaison Liverpool,149.58,4,83.0
+Liverpool, Premier Apartments Liverpool,135.72,4,89.0
+Liverpool, Marriott Liverpool City Centre,235.48,4,85.0
+Liverpool, Hampton by Hilton Liverpool City Centre,137.68,3,86.0
+Chester, Best Western Premier Queen,126.09,4,87.0
+Chester, ABode Chester,123.47,4,86.0
+Chester, Crowne Plaza Chester,126.11,4,88.0
+Chester, Macdonald New Blossoms,132.56,4,82.0
+Chester, Doubletree Chester,138.87,4,86.0
+Chester, The Chester Grosvenor & Grosvenor Spa,165.85,5,90.0
+Chester, The Grosvenor Pulford,82.06,4,87.0
+Chester, Brookside Hotel,84.67,3,83.0
+Chester, Best Western Llyndir Hall Hotel & Spa,68.35,4,80.0
+Chester, Brook Mollington Banastre Hotel & Spa,94.9,4,69.0
+Windermere, Beaumont House,95.23,5,92.0
+Windermere, The Lamplighter,90.51,4,84.0
+Windermere, Southview Guest House & Indoor Pool,100.42,4,95.0
+Windermere, Thornbank Guest House,80.0,4,91.0
+Windermere, Bonny Brae Guest House,75.24,3,93.0
+Windermere, Macdonald Old England,197.51,4,85.0
+Windermere, Dene House,90.29,4,95.0
+Windermere, The Burn How Garden House,160.24,3,87.0
+Windermere, The Westbourne,135.29,4,94.0
+Windermere, Craig Manor,96.22,3,82.0
+Penrith, North Lakes and Spa,114.55,4,0.0
+Penrith, Abbey House B&B,63.56,4,0.0
+Penrith, George Hotel,90.2,3,0.0
+Penrith, The White House Experience,100.56,4,0.0
+Penrith, Roundthorn Country House,104.59,5,0.0
+Penrith, Brandelhow Guest House,78.12,4,0.0
+Penrith, Queens Head Inn,60.66,3,0.0
+Penrith, Rampsbeck Country House Hotel,221.03,3,0.0
+Penrith, Bank House Bed & Breakfast Penrith,86.98,4,0.0
+Penrith, The Brantwood Hotel,65.34,4,0.0
+Southport, Vincent,98.17,4,0.0
+Southport, Britannia Scarisbrick,54.11,3,0.0
+Southport, Clifton Villa,70.88,4,0.0
+Southport, Best Western Royal Clifton,94.61,3,0.0
+Southport, Britannia Prince of Wales,69.79,3,0.0
+Southport, The Penkelie,65.32,2,0.0
+Southport, Cambridge House Hotel,75.42,3,0.0
+Southport, The Stamford,70.43,4,0.0
+Southport, Pontin's Southport Holiday Park,120.88,2,0.0
+Southport, Crescent House Hotel - Guest House,62.02,3,0.0
+Morecambe, Morecambe Bay Guest House,52.1,3,89.0
+Morecambe, Westleigh,50.9,3,73.0
+Morecambe, The Midland Hotel,118.96,4,87.0
+Morecambe, Lancaster House,93.99,4,87.0
+Morecambe, Thurnham Hall,65.08,4,90.0
+Morecambe, St Winifreds,65.07,2,62.0
+Morecambe, Royal Kings Arms Hotel,61.07,3,74.0
+Morecambe, The Royal Hotel (Latinos),67.49,3,80.0
+Morecambe, Penny Street Bridge,98.23,3,84.0
+Morecambe, The Clarendon,65.74,3,97.0
+Grasmere, Best Western Grasmere Red Lion,80.47,3,82.0
+Grasmere, Langdale Classic & Country Club,185.38,4,89.0
+Grasmere, Bridge House,80.4,3,85.0
+Grasmere, Moss Grove Organic,119.85,5,86.0
+Grasmere, Best Western Ambleside Salutation,209.69,3,91.0
+Grasmere, Claremont House,69.51,4,94.0
+Grasmere, Regent Hotel,114.86,3,91.0
+Grasmere, Nanny Brow House,130.0,5,92.0
+Grasmere, Brathay Lodge,117.22,4,87.0
+Grasmere, The Fisherbeck,110.6,4,91.0
+Cardiff, Novotel Cardiff Centre,121.88,4,83.0
+Cardiff, Mercure Holland House,119.27,4,85.0
+Cardiff, Park Plaza Cardiff,118.89,4,88.0
+Cardiff, Radisson Blu Cardiff,104.16,4,87.0
+Cardiff, Marriott Cardiff,117.91,4,86.0
+Cardiff, The Angel Cardiff,76.35,3,74.0
+Cardiff, Hilton Cardiff,148.1,4,86.0
+Cardiff, The St David's Hotel & Spa,143.66,5,84.0
+Cardiff, Holiday Inn Cardiff City,116.65,3,81.0
+Cardiff, Park Inn by Radisson Cardiff North Hotel,66.13,3,80.0
+Swansea, Dragon,77.94,4,80.0
+Swansea, Marriott Swansea,89.24,4,80.0
+Swansea, Ibis Swansea,60.21,3,80.0
+Swansea, Holiday Inn Express Swansea East,66.89,3,88.0
+Swansea, Leonardos Guest House,48.43,3,69.0
+Swansea, The Grand Hotel Swansea,62.13,3,84.0
+Swansea, Mercure Swansea,65.94,4,83.0
+Swansea, De Vere Village Urban Resort Swansea,74.68,3,81.0
+Swansea, Premier Inn Swansea City Centre,78.75,3,73.0
+Swansea, Dolphin Hotel,67.76,3,83.0
