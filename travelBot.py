@@ -37,7 +37,7 @@ class TravelBot:
 		travelDestinations = list()
 
 		with open(file_name, 'rb') as csvfile:
-			destinations = csv.reader(csvfile, delimiter=' ', quotechar='"')
+			destinations = csv.reader(csvfile, delimiter=',', quotechar='"')
 			next(destinations)
 			for row in destinations:
 				travelDestinations.append(row[0]+" , UK")
