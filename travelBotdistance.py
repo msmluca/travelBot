@@ -13,7 +13,6 @@ class travelBotdistance():
 	def timeDist(self, start_location, end_locations):
 
 		now = datetime.now()
-		print now
 		matrix = self.client.distance_matrix(start_location, end_locations ,
 											mode="driving",
 											avoid="tolls",
