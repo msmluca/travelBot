@@ -2,6 +2,7 @@
 from telegram import Updater, Bot, ReplyKeyboardMarkup, ForceReply, ReplyKeyboardHide
 import travelBotdistance
 import travelBotdestinations
+import travelBotnltk
 
 from random import randint, sample
 import logging

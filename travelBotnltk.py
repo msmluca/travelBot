@@ -47,11 +47,10 @@ class travelBotnltk():
 
 	def classify(self, text):
 		test = self.create_test(text, self.all_words)
-		res = self.classifier.classify(test))
+		res = self.classifier.classify(test)
 		return res
 
 	def load_training_set(self, file_name):
-		ps = PorterStemmer()
 		training_set = []
 		with open(file_name, 'r') as csvfile:
 			sentence = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -64,10 +63,12 @@ class travelBotnltk():
 
 	def create_train(self, train_set):
 		all_words = set()
+		ps = PorterStemmer()
 		t = []
 		words_tag = []
 		for passage in train_set:			
 			words_token = word_tokenize(passage[0].lower())		
+			words_token = [ps.stem(w) for w in words_token]
 			# convert numbers to keyword DIGIT
 			words_tag.append((['DIGIT' if word[1] == 'CD' else word[0] for word in pos_tag(words_token)],passage[1]))		
 			for word in words_tag[-1][0]:							
@@ -80,7 +81,9 @@ class travelBotnltk():
 
 
 	def create_test(self, test_sentence, all_words):
+		ps = PorterStemmer()
 		words_token = word_tokenize(test_sentence.lower())		
+		words_token = [ps.stem(w) for w in words_token]
 		# convert numbers to keyword DIGIT
 		words_tag = ['DIGIT' if word[1] == 'CD' else word[0] for word in pos_tag(words_token)]
 		t = {word: (word in words_tag) for word in all_words}
@@ -115,5 +118,5 @@ if __name__ == "__main__":
 	a = travelBotnltk()
 	#a.train()
 	#a.save()
-	a.classify("I look for 2 nights")
-	
+	b = a.classify("can travel for more than 2 hours")
+	print(b)
