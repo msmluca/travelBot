@@ -1,9 +1,11 @@
-QuestionType,Question
-NUMBERDAYS,"How many days?"
-NUMBERDAYS,"How many nights?"
-MAXTRAVELTIME,"How far would you like to go?"
-MAXBUDGET,"How much is your budget?"
-MAXBUDGET,"How much can you spend?"
-NROOMS,"How many rooms do you need?"
-ACTIVITIES,"What kind of holiday is it?"
-WHEN,"When you want to leave?"
+QuestionType,Question,Answerm
+NUMBERDAYS,"How many days?",INT
+NUMBERDAYS,"How many nights?",INT
+MAXTRAVELTIME,"How far would you like to go?",TIME
+MAXBUDGET,"How much is your budget?",INT
+MAXBUDGET,"How much can you spend?",INT
+NROOMS,"How many rooms do you need?",INT
+ACTIVITIES,"What kind of holiday is it?",LIST
+WHEN,"When do you want to leave?",TIME
+ERROR,"Sorry try again.",NONE
+HI,"Hallo!",NONE
