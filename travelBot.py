@@ -1,6 +1,7 @@
 
 from telegram import Updater, Bot, ReplyKeyboardMarkup, ForceReply, ReplyKeyboardHide
 import travelBotdistance
+import travelBotdestinations
 
 from random import randint, sample
 import logging
@@ -17,6 +18,8 @@ class TravelBot:
 		self.bot = Updater(auth_key)
 		self.manualbot = Bot(token=auth_key)
 		
+
+		# Initialize google distance class
 		self.googleDist = travelBotdistance.travelBotdistance()
 		self.googleDist.setUp()
 
@@ -30,20 +33,8 @@ class TravelBot:
 		dp.addTelegramMessageHandler(self.echo)
 		dp.addErrorHandler(self.error)
 
-		self.travelDestinations = self.load_destinations('destinations.csv')
-
-
-	def load_destinations(self, file_name):
-		travelDestinations = list()
-
-		with open(file_name, 'r') as csvfile:
-			destinations = csv.reader(csvfile, delimiter=',', quotechar='"')
-			next(destinations)
-			for row in destinations:
-				travelDestinations.append(row[0]+" , UK")
-		 
-		return travelDestinations
-
+		dest = travelBotdestinations.travelBotdestinations()
+		self.travelDestinations = dest.load_destinations('destinations.csv')
 
 	def message_event(self, bot, message):
 		# Is it a new chat
