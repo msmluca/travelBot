@@ -34,7 +34,7 @@ class TravelBot:
 		dp.addErrorHandler(self.error)
 
 		dest = travelBotdestinations.travelBotdestinations()
-		self.travelDestinations = dest.load_destinations('destinations.csv')
+		self.travelDestinations = dest.load_destinations('destinations_test.csv')
 
 	def message_event(self, bot, message):
 		# Is it a new chat
