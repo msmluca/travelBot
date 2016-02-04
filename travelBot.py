@@ -2,6 +2,7 @@
 from telegram import Updater, Bot, ReplyKeyboardMarkup, ForceReply, ReplyKeyboardHide
 import travelBotdistance
 import travelBotdestinations
+import travelBotnltk
 
 from random import randint, sample
 import logging
@@ -34,14 +35,16 @@ class TravelBot:
 		dp.addErrorHandler(self.error)
 
 		dest = travelBotdestinations.travelBotdestinations()
-		self.travelDestinations = dest.load_destinations('destinations.csv')
+		self.travelDestinations = dest.load_destinations('destinations_test.csv')
+		self.botnltk = travelBotnltk.travelBotnltk()
+
 
 	def message_event(self, bot, message):
 		# Is it a new chat
 		if (self.is_a_new_chat(message.chat.id)):
 			logging.debug("new chat")
 			self.chats[message.chat.id] = TravelChat(message)			
-			result = bot.sendMessage(message.chat.id, text='Hi ' + message.from_user.first_name)
+			result = bot.sendMessage(message.chat.id, text='Hallo ' + message.from_user.first_name)
 		else:
 			logging.debug("old chat")
 			self.chats[message.chat.id].add_msg(message)
@@ -66,7 +69,7 @@ class TravelBot:
 
 	def start(self, bot, update):
 		self.message_event(bot,update.message)
-		bot.sendMessage(update.message.chat_id, text='Welcome!')
+		bot.sendMessage(update.message.chat_id, text='Hallo! I\'m Das travel Bot.')
 
 
 	def help(self, bot, update):
@@ -110,6 +113,9 @@ class TravelBot:
 				return
 
 		self.message_event(bot,update.message)
+
+		msg_meaning = self.botnltk.classify(update.message.text)
+		bot.sendMessage(update.message.chat_id, text=msg_meaning)
 
 		logging.debug(update.message)
 		
