@@ -30,7 +30,7 @@ class TravelBot:
 		dp.addTelegramMessageHandler(self.echo)
 		dp.addErrorHandler(self.error)
 
-		self.travelDestinations = load_destinations('destinations.csv')
+		self.travelDestinations = self.load_destinations('destinations.csv')
 
 
 	def load_destinations(self, file_name):
@@ -42,18 +42,14 @@ class TravelBot:
 			for row in destinations:
 				travelDestinations.append(row[0]+" , UK")
 		 
-		 return travelDestinations
+		return travelDestinations
 
-	def is_security_cleared(self, user_id):
-		if user_id in self.users:
-			# I know this user but
-			return self.users[user_id].enabled
 
 	def message_event(self, bot, message):
 		# Is it a new chat
 		if (self.is_a_new_chat(message.chat.id)):
 			logging.debug("new chat")
-			self.chats[message.chat.id] = DeboscioChat(message)			
+			self.chats[message.chat.id] = TravelChat(message)			
 			result = bot.sendMessage(message.chat.id, text='Hi ' + message.from_user.first_name)
 		else:
 			logging.debug("old chat")
@@ -62,7 +58,7 @@ class TravelBot:
 		# Is it a new user
 		if (self.is_a_new_user(message.from_user.id)):
 			logging.debug("new user")
-			self.users[message.from_user.id] = DeboscioUser(message.from_user)			
+			self.users[message.from_user.id] = TravelUser(message.from_user)			
 
 		# Is it a msg with location
 		if (message.location is not None):
@@ -79,12 +75,12 @@ class TravelBot:
 
 	def start(self, bot, update):
 		self.message_event(bot,update.message)
-		bot.sendMessage(update.message.chat_id, text='Identify yourself!')
+		bot.sendMessage(update.message.chat_id, text='Welcome!')
 
 
 	def help(self, bot, update):
 		self.message_event(bot,update.message)
-		bot.sendMessage(update.message.chat_id, text='Nobody can helps you!')
+		bot.sendMessage(update.message.chat_id, text='Help me!')
 
 	def search(self, bot, update):
 		self.message_event(bot,update.message)
@@ -96,7 +92,7 @@ class TravelBot:
 			return
 
 		#bot.sendChatAction(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING)
-		logging.debug("Looking for a place...")
+		print("Looking for a place...")
 		places = self.googleDist.timeDist(str(user.latitude) + " " + str(user.longitude), self.travelDestinations)
 		print(places)
 		bot_answer = places['destination_addresses']
@@ -139,19 +135,6 @@ class TravelBot:
 			bot.sendMessage(update.message.chat_id, text='Got it!', reply_markup=ReplyKeyboardHide())				
 			del self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)]
 
-		if self.is_security_cleared(update.message.from_user.id):
-			bot.sendMessage(update.message.chat_id, text='Keep talking')
-
-
-	def authenticate(self, chat_id, user_id, is_admin, msg):
-		# check key and add user					
-		if msg == self.key:
-			self.users[user_id].enabled = True
-			return True
-		else:
-			self.users[user_id].enabled = False
-		return False
-
 
 	def error(bot, update, error):
 		loggin.warn('Update "%s" caused error "%s"' % (update, error))
@@ -159,7 +142,7 @@ class TravelBot:
 
 
 
-class DeboscioChat:
+class TravelChat:
 	
 	def __init__(self, message):
 		self.chat_id = message.chat.id
@@ -202,7 +185,7 @@ class DeboscioChat:
 		self.active = True
 
 
-class DeboscioUsers:
+class TravelUsers:
 	def add_user():
 		pass
 
@@ -216,7 +199,7 @@ class DeboscioUsers:
 		pass
 
 
-class DeboscioUser:
+class TravelUser:
 	def __init__(self, user):
 		self.id = user.id
 		self.first_name = user.first_name
@@ -233,7 +216,7 @@ class DeboscioUser:
 
 
 
-trbot = TravelBot('156902885:AAHBx4JrD1q35xMHrHjH_tsAe760j2f2Uz4')
+trbot = TravelBot('182627058:AAE-km8osu8MKE8n6Y3vOSJ89Kn6oLrlih8')
 
 # Start the Bot
 trbot.bot.start_polling()
