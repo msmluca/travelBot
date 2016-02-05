@@ -33,9 +33,89 @@ class travelBotrecommend():
 		# Calculate ratings for each destination-hotel combination
 		for dest_hotel, hotel_details in self.dest_hotels.iteritems():
 			if float(hotel_details['Price'])*nights <= max_budget and self.dest_time[dest_hotel[0]][1] <= max_time:
-				res[dest_hotel] = float(hotel_details['Star Rating'])/5.0 \
-											+ float(hotel_details['Review'])/100.0 \
-											+ (1-(float(self.dest_activities[dest_hotel[0]][activity + ' Rank'])/40.0))
+				
+				weather_temp_score_sat = 0
+				if self.dest_weather[dest_hotel[0]][12] < 0:
+					weather_temp_score_sat = 0
+				elif self.dest_weather[dest_hotel[0]][12] < 10:
+					weather_temp_score_sat = 0.25
+				elif self.dest_weather[dest_hotel[0]][12] < 20:
+					weather_temp_score_sat = 0.5
+				elif self.dest_weather[dest_hotel[0]][12] < 30:
+					weather_temp_score_sat = 0.75
+				elif self.dest_weather[dest_hotel[0]][12] >= 30:
+					weather_temp_score_sat = 1
+
+				weather_rain_score_sat = 0
+				if self.dest_weather[dest_hotel[0]][23] >= 50:
+					weather_rain_score_sat = 0
+				elif self.dest_weather[dest_hotel[0]][23] >= 7.6:
+					weather_rain_score_sat = 0.25
+				elif self.dest_weather[dest_hotel[0]][23] >= 2.5:
+					weather_rain_score_sat = 0.5
+				elif self.dest_weather[dest_hotel[0]][23] > 0:
+					weather_rain_score_sat = 0.75
+				elif self.dest_weather[dest_hotel[0]][23] == 0:
+					weather_rain_score_sat = 1
+
+				weather_wind_score_sat = 0
+				if self.dest_weather[dest_hotel[0]][20] > 30:
+					weather_wind_score_sat = 0
+				elif self.dest_weather[dest_hotel[0]][20] > 13:
+					weather_wind_score_sat = 0.25
+				elif self.dest_weather[dest_hotel[0]][20] > 5:
+					weather_wind_score_sat = 0.5
+				elif self.dest_weather[dest_hotel[0]][20] > 0:
+					weather_wind_score_sat = 0.75
+				elif self.dest_weather[dest_hotel[0]][20] == 0:
+					weather_wind_score_sat = 1
+
+				weather_cloud_score_sat = 1-(float(self.dest_weather[dest_hotel[0]][22])/100.0)
+
+				weather_temp_score_sun = 0
+				if self.dest_weather[dest_hotel[0]][24] < 0:
+					weather_temp_score_sun = 0
+				elif self.dest_weather[dest_hotel[0]][24] < 10:
+					weather_temp_score_sun = 0.25
+				elif self.dest_weather[dest_hotel[0]][24] < 20:
+					weather_temp_score_sun = 0.5
+				elif self.dest_weather[dest_hotel[0]][24] < 30:
+					weather_temp_score_sun = 0.75
+				elif self.dest_weather[dest_hotel[0]][24] >= 30:
+					weather_temp_score_sun = 1
+
+				weather_rain_score_sun = 0
+				if self.dest_weather[dest_hotel[0]][35] >= 50:
+					weather_rain_score_sun = 0
+				elif self.dest_weather[dest_hotel[0]][35] >= 7.6:
+					weather_rain_score_sun = 0.25
+				elif self.dest_weather[dest_hotel[0]][35] >= 2.5:
+					weather_rain_score_sun = 0.5
+				elif self.dest_weather[dest_hotel[0]][35] > 0:
+					weather_rain_score_sun = 0.75
+				elif self.dest_weather[dest_hotel[0]][35] == 0:
+					weather_rain_score_sun = 1
+
+				weather_wind_score_sun = 0
+				if self.dest_weather[dest_hotel[0]][32] > 30:
+					weather_wind_score_sun = 0
+				elif self.dest_weather[dest_hotel[0]][32] > 13:
+					weather_wind_score_sun = 0.25
+				elif self.dest_weather[dest_hotel[0]][32] > 5:
+					weather_wind_score_sun = 0.5
+				elif self.dest_weather[dest_hotel[0]][32] > 0:
+					weather_wind_score_sun = 0.75
+				elif self.dest_weather[dest_hotel[0]][32] == 0:
+					weather_wind_score_sun = 1
+
+				weather_cloud_score_sun = 1-(float(self.dest_weather[dest_hotel[0]][34])/100.0)
+
+				weather_score_final = float(weather_temp_score_sat + weather_rain_score_sat + weather_wind_score_sat + weather_cloud_score_sat \
+										+ weather_temp_score_sun + weather_rain_score_sun + weather_wind_score_sun + weather_cloud_score_sun) / 8.0
+				hotel_score_final = (float(hotel_details['Star Rating'])/5.0 + float(hotel_details['Review'])/100.0)/2.0
+				activity_score_final = (1-(float(self.dest_activities[dest_hotel[0]][activity + ' Rank'])/40.0)) 
+
+				res[dest_hotel] = weather_score_final + hotel_score_final + activity_score_final
 
 		# # Top 3 results
 		res_sorted = sorted(res.iteritems(), key=operator.itemgetter(1), reverse=True)
