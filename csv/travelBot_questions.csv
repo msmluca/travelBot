@@ -1,11 +1,15 @@
-QuestionType,Question,Answerm
-NUMBERDAYS,"How many days?",INT
-NUMBERDAYS,"How many nights?",INT
-MAXTRAVELTIME,"How far would you like to go?",TIME
-MAXBUDGET,"How much is your budget?",INT
-MAXBUDGET,"How much can you spend?",INT
-NROOMS,"How many rooms do you need?",INT
-ACTIVITIES,"What kind of holiday is it?",LIST
-WHEN,"When do you want to leave?",TIME
-ERROR,"Sorry try again.",NONE
-HI,"Hallo!",NONE
+QuestionType,Question,Answer,Options
+MAXTRAVELTIME,"How many hours would you willing to drive?",INT,"less than 1 hour:1,less than 2 hour:2,less than 3 hour:3,less than 4 hour:4"
+MAXTRAVELTIME,"What's your maximum travel time?",INT,"less than 1 hour:1,less than 2 hour:2,less than 3 hour:3,less than 4 hour:4"
+MAXBUDGET,"What's your budget?",INT,
+MAXBUDGET,"How much would you like to spend?",INT,
+ACTIVITIES,"What would you like to do?",LIST,"Sights & Landmarks:1,Museums:2,Tours & Activities:3,Nature & Parks:4,Amusement Parks:5,Nightlife:6"
+ACTIVITIES,"What you like to #ACTIVITY ?",LIST,"Sights & Landmarks:1,Museums:2,Tours & Activities:3,Nature & Parks:4,Amusement Parks:5,Nightlife:6"
+ERROR_MAXTRAVELTIME,"Lol! Have you thought about staycation?",NONE,
+ERROR_MAXTRAVELTIME,"Not very adventures... haha",NONE,
+ERROR_MAXTRAVELTIME,"Have you thought about exploring your local area.",NONE,
+ERROR_MAXBUDGET,"Umm... maybe you should just treat yourself to a takeaway.",NONE,
+ERROR_MAXBUDGET,"Sorry, try again next week.",NONE,
+ERROR_MAXBUDGET,"Why you don't just 'Netflix and chill'.",NONE,
+ERROR,"I don't understand what you are saying.",NONE,
+HI,"Hallo!",NONE,

@@ -30,13 +30,13 @@ class TravelBot:
 
 		# Register commands
 		dp.addTelegramCommandHandler("start", self.start)
-		dp.addTelegramCommandHandler("search", self.search)
+		#dp.addTelegramCommandHandler("search", self.search)
 		dp.addTelegramCommandHandler("help", self.help)
 		dp.addTelegramMessageHandler(self.echo)
 		dp.addErrorHandler(self.error)
 
 		dest = travelBotdestinations.travelBotdestinations()
-		self.travelDestinations = dest.load_destinations('./csv/destinations_test.csv')
+		self.travelDestinations = dest.load_destinations('./csv/destinations2.csv')
 		self.botnltk = travelBotnltk.travelBotnltk()
 
 
@@ -56,9 +56,9 @@ class TravelBot:
 			self.users[message.from_user.id] = TravelUser(message.from_user)			
 
 		# Is it a msg with location
-		if (message.location is not None):
-			self.users[message.from_user.id].set_location(message.location.latitude, message.location.longitude)
-			result = bot.sendMessage(message.chat.id, text='I got the new position')
+		# if (message.location is not None):
+		# 	self.users[message.from_user.id].set_location(message.location.latitude, message.location.longitude)
+		# 	result = bot.sendMessage(message.chat.id, text='I got the new position')
 
 	def is_a_new_chat(self, chat_id):
 		return not (chat_id in self.chats)
@@ -70,21 +70,28 @@ class TravelBot:
 
 	def start(self, bot, update):
 		self.message_event(bot,update.message)
-		bot.sendMessage(update.message.chat_id, text='Hallo! I\'m Das travel Bot.')
+		bot.sendMessage(update.message.chat_id, text='Hallo! I am Das Travel Bot.',reply_markup=ReplyKeyboardHide())
+		bot.sendMessage(update.message.chat_id, text='Let\'s sort out your weekend travel plans!',reply_markup=ReplyKeyboardHide())
 
+		self.search(bot,update)
 
 	def help(self, bot, update):
 		self.message_event(bot,update.message)
 		bot.sendMessage(update.message.chat_id, text='Help me!')
 
 
+	def reset(self, bot, update):
+		chat.journey.start()
+
+
 	def search(self, bot, update):
-		self.message_event(bot,update.message)
+	#	self.message_event(bot,update.message)
 
 		# do I've a location for this user?
 		user = self.users[update.message.from_user.id]
 		if not (isinstance(user.latitude, float) and isinstance(user.longitude,float)):
-			bot.sendMessage(update.message.chat_id, text=user.first_name + ' send me your location.')
+			bot.sendMessage(update.message.chat_id, text=user.first_name + ', where will you be travelling from? Send me your location!')
+			self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)] = [self.wait_location,None]
 			return
 
 		#Start the journey now!
@@ -92,17 +99,15 @@ class TravelBot:
 		self.travelJourney(None, update.message.chat_id, update.message.from_user.id,None)
 		#self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)] = [self.travelJourney,None]
 
-		#bot.sendChatAction(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING)
-		#print("Looking for a place...")
-		#places = self.googleDist.timeDist(str(user.latitude) + " " + str(user.longitude), self.travelDestinations)
-		#print(places)
-		
-		#reply_markup = ReplyKeyboardMarkup([bot_answer])
-		#for answer in bot_answer:
-		#	bot.sendMessage(update.message.chat_id, text=answer)
-		
-		#self.chat_user_actions[(update.message.chat_id, update.message.from_user.id)] = self.whereeat.select_place
 
+	def wait_location(self,question_key, chat_id, user_id, msg):
+		if (msg.location is not None):
+			self.users[user_id].set_location(msg.location.latitude, msg.location.longitude)
+			result = self.manualbot.sendMessage(chat_id, text='Thanks, got it!')
+			self.travelJourney(None, chat_id, user_id,None)
+		else:
+			result = self.manualbot.sendMessage(chat_id, text='Sorry I didn\'t get that...')
+			
 
 	def travelJourney(self, question_key, chat_id, user_id, msg):
 		chat = self.chats[chat_id]
@@ -111,32 +116,43 @@ class TravelBot:
 		# Check if I got an answer from a question
 		if question_key != None:
 			# extract from msg the answer
-			print(msg)
-			if chat.journey.get_answer_type(question_key)!='LIST':
-				ret = chat.journey.set_attribute(question_key, msg)
+			print(msg.text)
+
+			if chat.journey.has_options(question_key):
+				ret, error_key = chat.journey.set_attribute(question_key, msg.text)
+				if ret == -1:
+					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(error_key))
+					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(question_key))
+					return
 				chat.journey.complete_answer(question_key,1)
+			else:
+				ret, error_key = chat.journey.set_attribute(question_key, msg.text)
 				if ret == -1:
 					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question('ERROR'))
 					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(question_key))
 					return
-			else:
-				if msg == 'Done':
-					chat.journey.complete_answer(question_key,1)
-				else:
-					ret = chat.journey.set_attribute(question_key, msg)
-					if ret == -1:
-						self.manualbot.sendMessage(chat_id, text=chat.journey.get_question('ERROR'))
-						self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(question_key))
-						return
-			
+				chat.journey.complete_answer(question_key,1)
+		
+
 		next_key_journey = chat.journey.next_missing()
 		if next_key_journey != None:
 			# Next question
-			self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(next_key_journey))
-			self.chat_user_actions[(chat_id, user_id)] = [self.travelJourney,next_key_journey]
+			if chat.journey.has_options(next_key_journey):
+				print("question with keyboard")
+				reply_markup = ReplyKeyboardMarkup(chat.journey.get_options(next_key_journey))
+				print(reply_markup)
+				self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(next_key_journey), reply_markup = reply_markup)
+				self.chat_user_actions[(chat_id, user_id)] = [self.travelJourney,next_key_journey]
+			else:
+				print("question WITHOUT keyboard")
+				self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(next_key_journey),reply_markup=ReplyKeyboardHide())
+				self.chat_user_actions[(chat_id, user_id)] = [self.travelJourney,next_key_journey]
 		else:
 			#end of the journey
 			del self.chat_user_actions[(chat_id, user_id)]
+			self.manualbot.sendMessage(chat_id, text="Danke! Let me see if I can find any good for you.",reply_markup=ReplyKeyboardHide())
+			#need to reset user thing
+			chat.journey.start()
 			print("we got everything")
 
 
@@ -158,7 +174,7 @@ class TravelBot:
 				question_key = question_key,
 				chat_id = update.message.chat_id, 
 				user_id = update.message.from_user.id, 
-				msg = update.message.text)
+				msg = update.message)
 			
 #			bot.sendLocation(update.message.chat_id, latitude=float(ret['lat']), longitude=float(ret['lng']))
 
