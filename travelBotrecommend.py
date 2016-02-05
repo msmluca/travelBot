@@ -9,8 +9,8 @@ class travelBotrecommend():
 
 
 		# Load Destination Activities
-		da_obj = da.travelBotdestinations()
-		self.dest_activities = da_obj.load_destinations("./csv/DestinationActivityFreqRank.csv")
+		self.da_obj = da.travelBotdestinations()
+		self.dest_activities = self.da_obj.load_destinations("./csv/DestinationActivityFreqRank.csv")
 
 
 		# Load Destination Weather

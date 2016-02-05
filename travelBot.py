@@ -37,7 +37,7 @@ class TravelBot:
 		dp.addErrorHandler(self.error)
 
 		dest = travelBotdestinations.travelBotdestinations()
-		self.travelDestinations = dest.load_destinations('./csv/destinations2.csv')
+		#self.travelDestinations = dest.load_destinations('./csv/destinations2.csv')
 		self.botnltk = travelBotnltk.travelBotnltk()
 
 
@@ -156,16 +156,44 @@ class TravelBot:
 			#need to reset user thing
 
 			user = self.users[user_id]
-			print user.latitude + " " + user.longitude
+			print chat.journey.get_attribute('ACTIVITIES')
 
-			rec = travelBotrecommend.travelBotrecommend(user.latitude + " " + user.longitude)
-			res = rec.top_hotels('Museums', 10000, 300)
-
+			rec = travelBotrecommend.travelBotrecommend(str(user.latitude) + " " + str(user.longitude))
+			res = rec.top_hotels(chat.journey.get_attribute('ACTIVITIES'), chat.journey.get_attribute('MAXTRAVELTIME'), chat.journey.get_attribute('MAXBUDGET'))
 			print res
 
-			chat.journey.start()
-			print("we got everything")
+			if len(res.keys())> 0:
+				i = 1
+				bot_ans_keyboard = []
+				#{'Price': '143.66', 'Star Rating': '5', 'Sat Temp': 10.29, 'Time': u'3 hours 40 mins', 'Sun Temp': 8.08, 'Position': 2, 'Review': '84.0'}
+				for (place, hotel), details in res.items():
+					bot_ans = "%d. In %s, %s from here, there is a nice hotel %s for only %s per night." % 	(
+						i, place, details['Time'], hotel, details['Total Price'] )
+					self.manualbot.sendMessage(chat_id, text=bot_ans,reply_markup=ReplyKeyboardHide())
+					bot_ans_keyboard.append([str(i)])
+					chat.journey.add_results(i, (place, hotel), details)
+					print rec.getCoordinates(hotel,place)
+					i += 1
 
+				reply_markup = ReplyKeyboardMarkup(bot_ans_keyboard)
+				print(reply_markup)
+				self.manualbot.sendMessage(chat_id, text="Any preference?", reply_markup = reply_markup)
+
+				self.chat_user_actions[(chat_id, user_id)] = [self.selectSolution,None]
+			else:
+				self.manualbot.sendMessage(chat_id, text="Sorry I couldn't find anything for you. Try again.",reply_markup=ReplyKeyboardHide())
+				del self.chat_user_actions[(chat_id, user_id)]
+				chat.journey.start()
+
+	def selectSolution(self, question_key, chat_id, user_id, msg):	
+		chat = self.chats[chat_id]
+		
+		self.manualbot.sendMessage(chat_id, text="The option " + str(msg.text) + " it\'s my favourite too",reply_markup=ReplyKeyboardHide())
+		
+		del self.chat_user_actions[(chat_id, user_id)]
+
+		chat.journey.start()
+		print("we got everything")
 
 	def echo(self, bot, update):
 		if not (self.is_a_new_chat(update.message.chat.id)):

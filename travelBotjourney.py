@@ -13,6 +13,7 @@ class travelBotjourney:
 		with open(file_destination, 'r') as csvfile:
 		 	questions = csv.reader(csvfile, delimiter=',', quotechar='"')
 		 	next(questions)
+		 	self.bot_results = dict()
 		 	self.answer = dict()
 		 	self.questions = dict()
 		 	self.answers_status = dict()
@@ -109,6 +110,12 @@ class travelBotjourney:
 			return self.answer[key]
 		else:
 			return None
+
+	def add_results(self, i, key, details):
+		self.bot_results[i] = {'location': key, 'details' : details}
+
+	def get_results(self, i):
+		return self.bot_results[i]
 
 	def next_missing(self):
 		for key, value in self.answers_status.items():

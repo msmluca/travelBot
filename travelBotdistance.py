@@ -106,7 +106,16 @@ class travelBotdistance():
 		
 		fin.close()
 		return dest
-	
+
+	def getCoordinates(self, place, city):
+		coordinates = self.client.geocode(place+','+city)
+		print coordinates
+		lat = str(coordinates[0]["geometry"]["location"]["lat"])
+		lng = str(coordinates[0]["geometry"]["location"]["lng"])
+		
+		
+		return (lat, lng) 
+
 
 if __name__ == "__main__":
 	origin = "Coventry, UK"
