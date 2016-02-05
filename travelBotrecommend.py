@@ -7,8 +7,8 @@ class travelBotrecommend():
 
 	def __init__(self, start_position ):
 			# Load Destination Activities
-		da_obj = da.travelBotdestinations()
-		self.dest_activities = da_obj.load_destinations("./csv/destinations2.csv")
+		self.da_obj = da.travelBotdestinations()
+		self.dest_activities = self.da_obj.load_destinations("./csv/destinations2.csv")
 
 	# Load Destination Weather
 	# 0 = Fri Day Temp, 12 = Sat Day Temp, 24 = Sun Day Temp
@@ -23,6 +23,9 @@ class travelBotrecommend():
 		# Load Destination Hotels
 		dh_obj = dh.travelBothotels()
 		self.dest_hotels = dh_obj.load_hotels('./csv/hotel_info.csv')
+
+	def getCoordinates(self, place, city):
+		return self.da_obj.getCoordinates(place,city)
 
 	def top_hotels(self, activity, max_time, max_budget, nights=2):
 
