@@ -3,7 +3,7 @@ from telegram import Updater, Bot, ReplyKeyboardMarkup, ForceReply, ReplyKeyboar
 import travelBotdistance
 import travelBotdestinations
 import travelBotnltk
-
+import time
 import travelBotjourney
 import travelBotrecommend
 
@@ -72,7 +72,9 @@ class TravelBot:
 	def start(self, bot, update):
 		self.message_event(bot,update.message)
 		bot.sendMessage(update.message.chat_id, text='Hallo! I am Das Travel Bot.',reply_markup=ReplyKeyboardHide())
+		time.sleep(1)
 		bot.sendMessage(update.message.chat_id, text='Let\'s sort out your weekend travel plans!',reply_markup=ReplyKeyboardHide())
+		time.sleep(1)
 
 		self.search(bot,update)
 
@@ -130,7 +132,7 @@ class TravelBot:
 			else:
 				ret, error_key = chat.journey.set_attribute(question_key, msg.text)
 				if ret == -1:
-					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question('ERROR'))
+					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(error_key))
 					self.manualbot.sendMessage(chat_id, text=chat.journey.get_question(question_key))
 					return
 				chat.journey.complete_answer(question_key,1)
@@ -151,7 +153,9 @@ class TravelBot:
 				self.chat_user_actions[(chat_id, user_id)] = [self.travelJourney,next_key_journey]
 		else:
 			#end of the journey
-			del self.chat_user_actions[(chat_id, user_id)]
+			if (chat_id, user_id) in self.chat_user_actions.keys():
+				del self.chat_user_actions[(chat_id, user_id)]
+
 			self.manualbot.sendMessage(chat_id, text="Danke! Let me see if I can find any good for you.",reply_markup=ReplyKeyboardHide())
 			#need to reset user thing
 
@@ -167,11 +171,11 @@ class TravelBot:
 				bot_ans_keyboard = []
 				#{'Price': '143.66', 'Star Rating': '5', 'Sat Temp': 10.29, 'Time': u'3 hours 40 mins', 'Sun Temp': 8.08, 'Position': 2, 'Review': '84.0'}
 				for (place, hotel), details in res.items():
-					bot_ans = "%d. In %s, %s from here, there is a nice hotel %s for only %s per night." % 	(
-						i, place, details['Time'], hotel, details['Total Price'] )
+					bot_ans = "%d. In %s, %s from here, there is a nice hotel %s for only %s pound for two nights. The weather forecast is %s." % 	(
+						i, place, details['Time'], hotel, details['Total Price'] ,details['Sat Weather'])
 					self.manualbot.sendMessage(chat_id, text=bot_ans,reply_markup=ReplyKeyboardHide())
 					bot_ans_keyboard.append([str(i)])
-					chat.journey.add_results(i, (place, hotel), details)
+					chat.journey.add_results(i, (place, hotel), details, rec.getCoordinates(hotel,place))
 					print rec.getCoordinates(hotel,place)
 					i += 1
 
@@ -182,15 +186,28 @@ class TravelBot:
 				self.chat_user_actions[(chat_id, user_id)] = [self.selectSolution,None]
 			else:
 				self.manualbot.sendMessage(chat_id, text="Sorry I couldn't find anything for you. Try again.",reply_markup=ReplyKeyboardHide())
-				del self.chat_user_actions[(chat_id, user_id)]
+				
+				if (chat_id, user_id) in self.chat_user_actions.keys():
+					del self.chat_user_actions[(chat_id, user_id)]
 				chat.journey.start()
+
 
 	def selectSolution(self, question_key, chat_id, user_id, msg):	
 		chat = self.chats[chat_id]
 		
+		if msg.text.isdigit():
+			location = chat.journey.get_results(int(msg.text))
+			lat = location['location'][0]
+			lon = location['location'][1]
+
 		self.manualbot.sendMessage(chat_id, text="The option " + str(msg.text) + " it\'s my favourite too",reply_markup=ReplyKeyboardHide())
-		
-		del self.chat_user_actions[(chat_id, user_id)]
+		self.manualbot.sendMessage(chat_id, text="Do you know how to get there?",reply_markup=ReplyKeyboardHide())
+
+		self.manualbot.sendLocation(chat_id, latitude=float(lat), longitude=float(lon))
+
+		if (chat_id, user_id) in self.chat_user_actions.keys():
+					del self.chat_user_actions[(chat_id, user_id)]
+
 
 		chat.journey.start()
 		print("we got everything")

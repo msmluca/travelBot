@@ -111,8 +111,8 @@ class travelBotjourney:
 		else:
 			return None
 
-	def add_results(self, i, key, details):
-		self.bot_results[i] = {'location': key, 'details' : details}
+	def add_results(self, i, key, details, location):
+		self.bot_results[i] = {'location': key, 'details' : details, 'location': location}
 
 	def get_results(self, i):
 		return self.bot_results[i]

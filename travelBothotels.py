@@ -11,6 +11,8 @@ class travelBothotels():
 			hotels = csv.reader(csvfile, delimiter=',', quotechar='"')
 			next(hotels)
 			for row in hotels:
+				if len(row)<4:
+					print row
 				destinationHotels[(row[0],row[1])] = {'Price':row[2],
 											'Star Rating':row[3],
 											'Review':row[4]}
