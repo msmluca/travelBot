@@ -20,5 +20,4 @@ class travelBothotels():
 
 if __name__ == "__main__":
 	a = travelBothotels()
-	# print(a.load_hotels("./csv/hotel_info.csv", 'Manchester'))
 	print(a.load_hotels("./csv/hotel_info.csv"))
