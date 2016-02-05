@@ -2,7 +2,7 @@ import csv
 
 class travelBothotels():
 
-	def load_hotels(self, file_hotels, destination):
+	def load_hotels(self, file_hotels):
 
 		destinationHotels = {}
 
@@ -11,14 +11,14 @@ class travelBothotels():
 			hotels = csv.reader(csvfile, delimiter=',', quotechar='"')
 			next(hotels)
 			for row in hotels:
-				if row[0] == destination:
-					destinationHotels[row[1]] = {'Price':row[2],
-												'Star Rating':row[3],
-												'Review':row[4]}
+				destinationHotels[(row[0],row[1])] = {'Price':row[2],
+											'Star Rating':row[3],
+											'Review':row[4]}
 
 		return destinationHotels
 
 
 if __name__ == "__main__":
 	a = travelBothotels()
-	print(a.load_hotels("hotel_info_test.csv", 'Leeds'))
+	# print(a.load_hotels("./csv/hotel_info.csv", 'Manchester'))
+	print(a.load_hotels("./csv/hotel_info.csv"))

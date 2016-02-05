@@ -5,46 +5,19 @@ import operator
 
 class travelBotrecommend():
 
-	def top_hotels(self, dest_activities, dest_weather, dest_time, activity, max_time, nights, max_budget):
+	def top_hotels(self, dest_activities, dest_weather, dest_time, dest_hotels, activity, max_time, max_budget, nights=2):
 
 		dh_obj = dh.travelBothotels()
 		res = {}
 
-		# dest = [d[:-4] for d in dest_activities.keys()]
-
-		# # activities
-		# res = dict.fromkeys(dest)
-		# print res
-		# for d in dest:
-		# 	val = dest_activities[d+', UK']
-
-		# 	li = [(k,v) for (k,v) in val.iteritems()]
-
-		# 	li = sorted(li)
-
-		# 	#print li
-		# 	ki = [it[1] for it in li]
-
-		# 	#print "ki=",  ki
-		# 	res[d]=ki
-		                
-		# # weather
-		# for d in dest:
-		# 	val_w = dest_weather[d]
-		# 	val_t = dest_time[d]
-
-		# 	old = res[d]
-		# 	res[d] = old+val_w+val_t
-
 		# Calculate ratings for each destination-hotel combination
-		for destination, dest_details in dest_activities.iteritems():
-			for hotel, hotel_details in dh_obj.load_hotels("./csv/hotel_info.csv", destination).iteritems():
-				if float(hotel_details['Price'])*nights <= max_budget and int(dest_time[destination][1]) <= max_time:
-					res[(destination,hotel)] = float(hotel_details['Star Rating'])/5.0 \
-												+ float(hotel_details['Review'])/100.0 \
-												+ (1-(float(dest_details[activity])/40.0))
+		for dest_hotel, hotel_details in dest_hotels.iteritems():
+			if float(hotel_details['Price'])*nights <= max_budget and dest_time[dest_hotel[0]][1] <= max_time:
+				res[dest_hotel] = float(hotel_details['Star Rating'])/5.0 \
+											+ float(hotel_details['Review'])/100.0 \
+											+ (1-(float(dest_activities[dest_hotel[0]][activity])/40.0))
 
-		# Top 3 results
+		# # Top 3 results
 		res_sorted = sorted(res.iteritems(), key=operator.itemgetter(1), reverse=True)
 		res_top3 = [res_sorted[0]]
 		city_top3 = [res_sorted[0][0][0]]
@@ -56,15 +29,14 @@ class travelBotrecommend():
 				if len(res_top3) == 3:
 					break
 
-
 		# Repackage
 		res_top3_final = {}
 		for i in range(0,len(res_top3)):
 			res_top3_final[res_top3[i][0]] = {
 				'Position':i,
-				'Price':dh_obj.load_hotels("./csv/hotel_info.csv", res_top3[i][0][0])[res_top3[i][0][1]]['Price'],
-				'Star Rating':dh_obj.load_hotels("./csv/hotel_info.csv", res_top3[i][0][0])[res_top3[i][0][1]]['Star Rating'],
-				'Review':dh_obj.load_hotels("./csv/hotel_info.csv", res_top3[i][0][0])[res_top3[i][0][1]]['Review'],
+				'Price':dest_hotels[res_top3[i][0]]['Price'],
+				'Star Rating':dest_hotels[res_top3[i][0]]['Star Rating'],
+				'Review':dest_hotels[res_top3[i][0]]['Review'],
 				'Time':dest_time[res_top3[i][0][0]][0],
 				'Sat Temp':dest_weather[res_top3[i][0][0]][12],
 				'Sun Temp':dest_weather[res_top3[i][0][0]][24]
@@ -90,7 +62,11 @@ if __name__ == "__main__":
 	# Load Destination Travel
 	dest_time = dd_obj.timeDist('london, uk', dest_list)
 
+	# Load Destination Hotels
+	dh_obj = dh.travelBothotels()
+	dest_hotels = dh_obj.load_hotels('./csv/hotel_info.csv')
+
 	rec = travelBotrecommend()
-	res = rec.top_hotels(dest_activities, dest_weather, dest_time, 'Museums', 10000, 2, 1000)
+	res = rec.top_hotels(dest_activities, dest_weather, dest_time, dest_hotels, 'Museums', 10000, 1000)
 
 	print(res)
