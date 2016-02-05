@@ -148,7 +148,9 @@ class travelBotrecommend():
 				'Review':self.dest_hotels[res_top3[i][0]]['Review'],
 				'Time':self.dest_time[res_top3[i][0][0]][0],
 				'Sat Temp':self.dest_weather[res_top3[i][0][0]][12],
+				'Sat Weather':self.dest_weather[res_top3[i][0][0]][18],
 				'Sun Temp':self.dest_weather[res_top3[i][0][0]][24],
+				'Sun Weather':self.dest_weather[res_top3[i][0][0]][30],
 				'Activity':self.dest_activities[res_top3[i][0][0]][activity]
 			}
 
