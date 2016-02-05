@@ -9,8 +9,8 @@ import json
 class travelBotdistance():
 
 	def setUp(self):
-		#self.key = 'AIzaSyBUV64wz3G7-c-5Vgni9NpCrsKdi9Iw4S8'
-		self.key = 'AIzaSyC0Na5lm99GZSQE7tVDWkf1jnFAnws_8hQ'
+		self.key = 'AIzaSyB18YNnS59cL8dVFpOoIGXfATCyvITSbFU'
+		#self.key = 'AIzaSyC0Na5lm99GZSQE7tVDWkf1jnFAnws_8hQ'
 		self.client = googlemaps.Client(self.key)
 
 	def timeDist(self, start_location, end_locations):

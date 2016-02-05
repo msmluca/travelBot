@@ -163,8 +163,10 @@ class TravelBot:
 			print chat.journey.get_attribute('ACTIVITIES')
 
 			rec = travelBotrecommend.travelBotrecommend(str(user.latitude) + " " + str(user.longitude))
-			res = rec.top_hotels(chat.journey.get_attribute('ACTIVITIES'), chat.journey.get_attribute('MAXTRAVELTIME'), chat.journey.get_attribute('MAXBUDGET'))
-			print res
+
+			print "time " + str( chat.journey.get_attribute('MAXTRAVELTIME'))
+			res = rec.top_hotels(chat.journey.get_attribute('ACTIVITIES'), int(chat.journey.get_attribute('MAXTRAVELTIME')), int(chat.journey.get_attribute('MAXBUDGET')))
+			print "MAIN ",res
 
 			if len(res.keys())> 0:
 				i = 1
@@ -175,8 +177,8 @@ class TravelBot:
 						i, place, details['Time'], hotel, details['Total Price'] ,details['Sat Weather'])
 					self.manualbot.sendMessage(chat_id, text=bot_ans,reply_markup=ReplyKeyboardHide())
 					bot_ans_keyboard.append([str(i)])
-					chat.journey.add_results(i, (place, hotel), details, rec.getCoordinates(hotel,place))
-					print rec.getCoordinates(hotel,place)
+					chat.journey.add_results(i, (place, hotel), details, rec.getCoordinates(hotel,place + ',UK'))
+					print rec.getCoordinates(hotel,place+',UK')
 					i += 1
 
 				reply_markup = ReplyKeyboardMarkup(bot_ans_keyboard)
@@ -239,7 +241,7 @@ class TravelBot:
 
 
 	def error(bot, update, error, error2):
-		loggin.warn('Update "%s" caused error "%s"' % (update, error))
+		print('Update "%s" caused error "%s"' % (update, error))
 		raise ValueError('Parameter should...')
 
 

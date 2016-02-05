@@ -32,6 +32,8 @@ class travelBotrecommend():
 
 	def top_hotels(self, activity, max_time, max_budget, nights=2):
 
+		print "RECOMEND: ", type(activity), type(max_time), type(max_budget)
+
 		dh_obj = dh.travelBothotels()
 		res = {}
 
@@ -154,13 +156,14 @@ class travelBotrecommend():
 				'Activity':self.dest_activities[res_top3[i][0][0]][activity]
 			}
 
+		print "RECOMEND: ", res_top3_final
 		return res_top3_final
 
 
 
 if __name__ == "__main__":
 
-	rec = travelBotrecommend("london, uk")
-	res = rec.top_hotels('Museums', 1, 1)
+	rec = travelBotrecommend("53.4875235 -2.2901264")
+	res = rec.top_hotels('Museums', 3600, 400000)
 
 	print(res)

@@ -1,7 +1,7 @@
 QuestionType,Question,Answer,Options
-MAXTRAVELTIME,"How many hours would you willing to drive?",INT,"less than 1 hour:3600,less than 2 hour:7200,less than 3 hour:10800,less than 4 hour:14400"
-MAXTRAVELTIME,"What's your maximum travel time?",INT,"less than 1 hour:3600,less than 2 hour:7200,less than 3 hour:10800,less than 4 hour:14400"
-MAXTRAVELTIME,"Great, how long are you willing to drive for?",INT,"less than 1 hour:3600,less than 2 hour:7200,less than 3 hour:10800,less than 4 hour:14400"
+MAXTRAVELTIME,"How many hours would you willing to drive?",INT,"less than 1 hour:3600,less than 2 hour:7200,less than 3 hour:10800,less than 4 hour:14400,less than 5 hour:18000"
+MAXTRAVELTIME,"What's your maximum travel time?",INT,"less than 1 hour:3600,less than 2 hour:7200,less than 3 hour:10800,less than 4 hour:14400,less than 5 hour:18000"
+MAXTRAVELTIME,"Great, how long are you willing to drive for?",INT,"less than 1 hour:3600,less than 2 hour:7200,less than 3 hour:10800,less than 4 hour:14400,less than 5 hour:18000"
 MAXBUDGET,"What's your budget?",INT,
 MAXBUDGET,"How much would you like to spend?",INT,
 MAXBUDGET,"What is your budget for your weekend away?",INT,
