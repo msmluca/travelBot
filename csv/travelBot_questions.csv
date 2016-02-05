@@ -1,10 +1,12 @@
 QuestionType,Question,Answer,Options
 MAXTRAVELTIME,"How many hours would you willing to drive?",INT,"less than 1 hour:1,less than 2 hour:2,less than 3 hour:3,less than 4 hour:4"
 MAXTRAVELTIME,"What's your maximum travel time?",INT,"less than 1 hour:1,less than 2 hour:2,less than 3 hour:3,less than 4 hour:4"
+MAXTRAVELTIME,"Great, how long are you willing to drive for?",INT,"less than 1 hour:1,less than 2 hour:2,less than 3 hour:3,less than 4 hour:4"
 MAXBUDGET,"What's your budget?",INT,
 MAXBUDGET,"How much would you like to spend?",INT,
+MAXBUDGET,"What is your budget for your weekend away?",INT,
 ACTIVITIES,"What would you like to do?",LIST,"Sights & Landmarks:1,Museums:2,Tours & Activities:3,Nature & Parks:4,Amusement Parks:5,Nightlife:6"
-ACTIVITIES,"What you like to #ACTIVITY ?",LIST,"Sights & Landmarks:1,Museums:2,Tours & Activities:3,Nature & Parks:4,Amusement Parks:5,Nightlife:6"
+ACTIVITIES,"what would be the main thing you want to do over your weekend away?",LIST,"Sights & Landmarks:1,Museums:2,Tours & Activities:3,Nature & Parks:4,Amusement Parks:5,Nightlife:6"
 ERROR_MAXTRAVELTIME,"Lol! Have you thought about staycation?",NONE,
 ERROR_MAXTRAVELTIME,"Not very adventures... haha",NONE,
 ERROR_MAXTRAVELTIME,"Have you thought about exploring your local area.",NONE,

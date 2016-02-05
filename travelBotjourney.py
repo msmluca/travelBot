@@ -30,6 +30,7 @@ class travelBotjourney:
 		 		else:
 		 			self.answers_status[row[0]] = {'type':row[2],'complete':0}
 
+		 		print row
 		 		if len(row[3])>0:
 		 			self.answers_status[row[0]]['answers'] = {}
 		 			for ans in row[3].split(","):
@@ -63,7 +64,10 @@ class travelBotjourney:
 			# question that accept any int
 			elif self.answers_status[key]['type'] == 'INT':
 				if value.isdigit():
-					self.answer[key] = int(value)
+					if key == 'MAXBUDGET' and int(value) < 50:
+						return -1, 'ERROR_' + key
+					else:
+						self.answer[key] = int(value)
 				else:
 				 return -1, 'ERROR'
 			else:

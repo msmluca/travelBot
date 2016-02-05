@@ -5,6 +5,7 @@ import travelBotdestinations
 import travelBotnltk
 
 import travelBotjourney
+import travelBotrecommend
 
 from random import randint, sample
 import logging
@@ -111,6 +112,7 @@ class TravelBot:
 
 	def travelJourney(self, question_key, chat_id, user_id, msg):
 		chat = self.chats[chat_id]
+
 		print("Travel Journey call")
 
 		# Check if I got an answer from a question
@@ -152,6 +154,15 @@ class TravelBot:
 			del self.chat_user_actions[(chat_id, user_id)]
 			self.manualbot.sendMessage(chat_id, text="Danke! Let me see if I can find any good for you.",reply_markup=ReplyKeyboardHide())
 			#need to reset user thing
+
+			user = self.users[user_id]
+			print user.latitude + " " + user.longitude
+
+			rec = travelBotrecommend.travelBotrecommend(user.latitude + " " + user.longitude)
+			res = rec.top_hotels('Museums', 10000, 300)
+
+			print res
+
 			chat.journey.start()
 			print("we got everything")
 
