@@ -56,7 +56,21 @@ class travelBotrecommend():
 				if len(res_top3) == 3:
 					break
 
-		return res_top3
+
+		# Repackage
+		res_top3_final = {}
+		for i in range(0,len(res_top3)):
+			res_top3_final[res_top3[i][0]] = {
+				'Position':i,
+				'Price':dh_obj.load_hotels("./csv/hotel_info.csv", res_top3[i][0][0])[res_top3[i][0][1]]['Price'],
+				'Star Rating':dh_obj.load_hotels("./csv/hotel_info.csv", res_top3[i][0][0])[res_top3[i][0][1]]['Star Rating'],
+				'Review':dh_obj.load_hotels("./csv/hotel_info.csv", res_top3[i][0][0])[res_top3[i][0][1]]['Review'],
+				'Time':dest_time[res_top3[i][0][0]][0],
+				'Sat Temp':dest_weather[res_top3[i][0][0]][12],
+				'Sun Temp':dest_weather[res_top3[i][0][0]][24]
+			}
+
+		return res_top3_final
 
 
 
