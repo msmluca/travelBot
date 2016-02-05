@@ -15,20 +15,20 @@ class travelBotrecommend():
 
 		# Load Destination Weather
 		# 0 = Fri Day Temp, 12 = Sat Day Temp, 24 = Sun Day Temp
-		dd_obj = dd.travelBotdistance()
-		dd_obj.setUp()
-		self.dest_list = dd_obj.getDestination()
-		self.dest_weather = dd_obj.getWeather(self.dest_list)
+		self.dd_obj = dd.travelBotdistance()
+		self.dd_obj.setUp()
+		self.dest_list = self.dd_obj.getDestination()
+		self.dest_weather = self.dd_obj.getWeather(self.dest_list)
 
 		# Load Destination Travel
-		self.dest_time = dd_obj.timeDist(start_position, self.dest_list)
+		self.dest_time = self.dd_obj.timeDist(start_position, self.dest_list)
 
 		# Load Destination Hotels
 		dh_obj = dh.travelBothotels()
 		self.dest_hotels = dh_obj.load_hotels('./csv/hotel_info.csv')
 
 	def getCoordinates(self, place, city):
-		return self.da_obj.getCoordinates(place,city)
+		return self.dd_obj.getCoordinates(place,city)
 
 	def top_hotels(self, activity, max_time, max_budget, nights=2):
 
