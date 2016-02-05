@@ -30,12 +30,31 @@ class travelBotdestinations():
 					'Classes & Workshops':row[16],
 					'Traveller Resources':row[17],
 					'Zoos & Aquariums':row[18],
-					'Events':row[19]}
+					'Events':row[19],
+					'Sights & Landmarks Rank':row[20],
+					'Museums Rank':row[21],
+					'Tours & Activities Rank':row[22],
+					'Nature & Parks Rank':row[23],
+					'Amusement Parks Rank':row[24],
+					'Nightlife Rank':row[25],
+					'Outdoor Activities Rank':row[26],
+					'Shopping Rank':row[27],
+					'Fun & Games Rank':row[28],
+					'Theatre & Concerts Rank':row[29],
+					'Boat Tours & Water Sports Rank':row[30],
+					'Food & Drink Rank':row[31],
+					'Spas & Wellness Rank':row[32],
+					'Casinos & Gambling Rank':row[33],
+					'Transportation Rank':row[34],
+					'Classes & Workshops Rank':row[35],
+					'Traveller Resources Rank':row[36],
+					'Zoos & Aquariums Rank':row[37],
+					'Events Rank':row[38]}
 
 		return travelDestinations
 
 
 if __name__ == "__main__":
 	a = travelBotdestinations()
-	b = a.load_destinations("./csv/destinations2.csv")
+	b = a.load_destinations("./csv/DestinationActivityFreqRank.csv")
 	print(b['Derby'])

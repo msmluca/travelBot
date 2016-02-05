@@ -6,12 +6,13 @@ import operator
 class travelBotrecommend():
 
 	def __init__(self, start_position ):
-			# Load Destination Activities
-		da_obj = da.travelBotdestinations()
-		self.dest_activities = da_obj.load_destinations("./csv/destinations2.csv")
 
-	# Load Destination Weather
-	# 0 = Fri Day Temp, 12 = Sat Day Temp, 24 = Sun Day Temp
+		# Load Destination Activities
+		da_obj = da.travelBotdestinations()
+		self.dest_activities = da_obj.load_destinations("./csv/DestinationActivityFreqRank.csv")
+
+		# Load Destination Weather
+		# 0 = Fri Day Temp, 12 = Sat Day Temp, 24 = Sun Day Temp
 		dd_obj = dd.travelBotdistance()
 		dd_obj.setUp()
 		self.dest_list = dd_obj.getDestination()
@@ -34,7 +35,7 @@ class travelBotrecommend():
 			if float(hotel_details['Price'])*nights <= max_budget and self.dest_time[dest_hotel[0]][1] <= max_time:
 				res[dest_hotel] = float(hotel_details['Star Rating'])/5.0 \
 											+ float(hotel_details['Review'])/100.0 \
-											+ (1-(float(self.dest_activities[dest_hotel[0]][activity])/40.0))
+											+ (1-(float(self.dest_activities[dest_hotel[0]][activity + ' Rank'])/40.0))
 
 		# # Top 3 results
 		res_sorted = sorted(res.iteritems(), key=operator.itemgetter(1), reverse=True)
@@ -52,13 +53,14 @@ class travelBotrecommend():
 		res_top3_final = {}
 		for i in range(0,len(res_top3)):
 			res_top3_final[res_top3[i][0]] = {
-				'Position':i,
-				'Price':self.dest_hotels[res_top3[i][0]]['Price'],
+				'Position':i+1,
+				'Total Price':float(self.dest_hotels[res_top3[i][0]]['Price'])*nights,
 				'Star Rating':self.dest_hotels[res_top3[i][0]]['Star Rating'],
 				'Review':self.dest_hotels[res_top3[i][0]]['Review'],
 				'Time':self.dest_time[res_top3[i][0][0]][0],
 				'Sat Temp':self.dest_weather[res_top3[i][0][0]][12],
-				'Sun Temp':self.dest_weather[res_top3[i][0][0]][24]
+				'Sun Temp':self.dest_weather[res_top3[i][0][0]][24],
+				'Activity':self.dest_activities[res_top3[i][0][0]][activity]
 			}
 
 		return res_top3_final
@@ -66,8 +68,6 @@ class travelBotrecommend():
 
 
 if __name__ == "__main__":
-
-
 
 	rec = travelBotrecommend("london, uk")
 	res = rec.top_hotels('Museums', 10000, 1000)
