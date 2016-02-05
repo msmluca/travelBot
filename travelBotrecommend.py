@@ -122,7 +122,11 @@ class travelBotrecommend():
 
 				res[dest_hotel] = weather_score_final + hotel_score_final + activity_score_final
 
-		# # Top 3 results
+		# Return empty dictionary if no results
+		if len(res) <= 0:
+			return {}
+
+		# Top 3 results
 		res_sorted = sorted(res.iteritems(), key=operator.itemgetter(1), reverse=True)
 		res_top3 = [res_sorted[0]]
 		city_top3 = [res_sorted[0][0][0]]
@@ -144,7 +148,9 @@ class travelBotrecommend():
 				'Review':self.dest_hotels[res_top3[i][0]]['Review'],
 				'Time':self.dest_time[res_top3[i][0][0]][0],
 				'Sat Temp':self.dest_weather[res_top3[i][0][0]][12],
+				'Sat Weather':self.dest_weather[res_top3[i][0][0]][19],
 				'Sun Temp':self.dest_weather[res_top3[i][0][0]][24],
+				'Sun Weather':self.dest_weather[res_top3[i][0][0]][31],
 				'Activity':self.dest_activities[res_top3[i][0][0]][activity]
 			}
 
@@ -155,6 +161,6 @@ class travelBotrecommend():
 if __name__ == "__main__":
 
 	rec = travelBotrecommend("london, uk")
-	res = rec.top_hotels('Museums', 10000, 1000)
+	res = rec.top_hotels('Museums', 1, 1)
 
 	print(res)
